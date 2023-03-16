@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message MsgCommonBool
+{
+	bool	value			= 1;
+}
+
+message MsgCommonN32
+{
+	int32	value			= 1;
+}
+
+message MsgCommonN64
+{
+	int64	value			= 1;
+}

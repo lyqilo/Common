@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+enum EMsgIDLogin
+{
+	MsgIDLogin_Null				= 0;
+	MsgIDLogin					= 1;	//玩家登录
+}
