@@ -66,7 +66,7 @@ static void InitDefaultsscc_info_MsgRegisterServer_ServerInternalProto_2eproto()
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MsgRegisterServer_ServerInternalProto_2eproto}, {}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ServerInternalProto_2eproto[3];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_ServerInternalProto_2eproto[2];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_ServerInternalProto_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_ServerInternalProto_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ServerInternalProto_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -112,14 +112,7 @@ const char descriptor_table_protodef_ServerInternalProto_2eproto[] PROTOBUF_SECT
   "rver_id\030\003 \001(\005\"K\n\024MsgDBUpdateOnlineNum\022\021\n"
   "\tserver_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005\022\022\n\nonline"
   "_num\030\003 \001(\005\"5\n\022MsgDBRegisterLogin\022\021\n\tserv"
-  "er_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005*t\n\031EMsgIDServe"
-  "rInternalProto\022\030\n\024SERVER_INTERNAL_NULL\020\000"
-  "\022\031\n\025LOGIN2CENTER_REGISTER\020\001\022\"\n\036LOGIN2CEN"
-  "TER_UPDATE_ONLINE_NUM\020\002*\232\001\n\010EMsgIDDB\022\020\n\014"
-  "MsgIDDB_NULL\020\000\022\037\n\033SERVER2DB_UPDATE_ONLIN"
-  "E_NUM\020\001\022\035\n\031SERVER2DB_INIT_ONLINE_NUM\020\002\022\034"
-  "\n\030SERVER2DB_REGISTER_LOGIN\020\003\022\036\n\032SERVER2D"
-  "B_UNREGISTER_LOGIN\020\004b\006proto3"
+  "er_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ServerInternalProto_2eproto_deps[1] = {
 };
@@ -130,7 +123,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Ser
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ServerInternalProto_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ServerInternalProto_2eproto = {
-  false, false, descriptor_table_protodef_ServerInternalProto_2eproto, "ServerInternalProto.proto", 508,
+  false, false, descriptor_table_protodef_ServerInternalProto_2eproto, "ServerInternalProto.proto", 233,
   &descriptor_table_ServerInternalProto_2eproto_once, descriptor_table_ServerInternalProto_2eproto_sccs, descriptor_table_ServerInternalProto_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_ServerInternalProto_2eproto::offsets,
   file_level_metadata_ServerInternalProto_2eproto, 3, file_level_enum_descriptors_ServerInternalProto_2eproto, file_level_service_descriptors_ServerInternalProto_2eproto,
@@ -138,38 +131,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Server
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_ServerInternalProto_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_ServerInternalProto_2eproto)), true);
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDServerInternalProto_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ServerInternalProto_2eproto);
-  return file_level_enum_descriptors_ServerInternalProto_2eproto[0];
-}
-bool EMsgIDServerInternalProto_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-      return true;
-    default:
-      return false;
-  }
-}
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDDB_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ServerInternalProto_2eproto);
-  return file_level_enum_descriptors_ServerInternalProto_2eproto[1];
-}
-bool EMsgIDDB_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 

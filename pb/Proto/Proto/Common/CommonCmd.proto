@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+enum EMsgIDMain
+{
+	EMsgIDMain_Null		= 0;
+}
+
+enum EMsgIDGame
+{
+	MsgIDGame_Null				= 0;
+}

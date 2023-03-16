@@ -1,11 +1,5 @@
 syntax = "proto3";
 
-enum EMsgIDLogin
-{
-	MsgIDLogin_Null				= 0;
-	MsgIDLogin					= 1;	//玩家登录
-	MsgIDLoginResp				= 2;	//玩家登录返回
-}
 
 message MsgPlayerLogin
 {

@@ -22,21 +22,13 @@ public static partial class GameReflection {
   static GameReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChVQcm90by9HYW1lL0dhbWUucHJvdG8qIAoKRU1zZ0lER2FtZRISCg5Nc2dJ",
-          "REdhbWVfTnVsbBAAYgZwcm90bzM="));
+          "ChVQcm90by9HYW1lL0dhbWUucHJvdG9iBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDGame), }, null, null));
+        new pbr::GeneratedClrTypeInfo(null, null, null));
   }
   #endregion
 
 }
-#region Enums
-public enum EMsgIDGame {
-  [pbr::OriginalName("MsgIDGame_Null")] MsgIdgameNull = 0,
-}
-
-#endregion
-
 
 #endregion Designer generated code

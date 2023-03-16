@@ -1,22 +1,5 @@
 syntax = "proto3";
 
-enum EMsgIDServerInternalProto
-{
-	SERVER_INTERNAL_NULL			= 0;
-	LOGIN2CENTER_REGISTER			= 1;	//登录服务器注册
-	LOGIN2CENTER_UPDATE_ONLINE_NUM	= 2;	//更新在线人数
-}
-
-enum EMsgIDDB
-{
-	MsgIDDB_NULL					= 0;
-	SERVER2DB_UPDATE_ONLINE_NUM		= 1;	//更新在线人数
-	SERVER2DB_INIT_ONLINE_NUM		= 2;	//初始化在线人数
-	SERVER2DB_REGISTER_LOGIN		= 3;	//登录服务器注册
-	SERVER2DB_UNREGISTER_LOGIN		= 4;	//登录服务器关闭
-}
-
-
 /////////////////////////服务器与服务器///////////////////////////
 message MsgRegisterServer
 {

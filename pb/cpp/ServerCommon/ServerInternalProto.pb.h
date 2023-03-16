@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -69,60 +68,6 @@ template<> ::MsgDBUpdateOnlineNum* Arena::CreateMaybeMessage<::MsgDBUpdateOnline
 template<> ::MsgRegisterServer* Arena::CreateMaybeMessage<::MsgRegisterServer>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
-enum EMsgIDServerInternalProto : int {
-  SERVER_INTERNAL_NULL = 0,
-  LOGIN2CENTER_REGISTER = 1,
-  LOGIN2CENTER_UPDATE_ONLINE_NUM = 2,
-  EMsgIDServerInternalProto_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  EMsgIDServerInternalProto_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool EMsgIDServerInternalProto_IsValid(int value);
-constexpr EMsgIDServerInternalProto EMsgIDServerInternalProto_MIN = SERVER_INTERNAL_NULL;
-constexpr EMsgIDServerInternalProto EMsgIDServerInternalProto_MAX = LOGIN2CENTER_UPDATE_ONLINE_NUM;
-constexpr int EMsgIDServerInternalProto_ARRAYSIZE = EMsgIDServerInternalProto_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDServerInternalProto_descriptor();
-template<typename T>
-inline const std::string& EMsgIDServerInternalProto_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, EMsgIDServerInternalProto>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function EMsgIDServerInternalProto_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    EMsgIDServerInternalProto_descriptor(), enum_t_value);
-}
-inline bool EMsgIDServerInternalProto_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EMsgIDServerInternalProto* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EMsgIDServerInternalProto>(
-    EMsgIDServerInternalProto_descriptor(), name, value);
-}
-enum EMsgIDDB : int {
-  MsgIDDB_NULL = 0,
-  SERVER2DB_UPDATE_ONLINE_NUM = 1,
-  SERVER2DB_INIT_ONLINE_NUM = 2,
-  SERVER2DB_REGISTER_LOGIN = 3,
-  SERVER2DB_UNREGISTER_LOGIN = 4,
-  EMsgIDDB_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  EMsgIDDB_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool EMsgIDDB_IsValid(int value);
-constexpr EMsgIDDB EMsgIDDB_MIN = MsgIDDB_NULL;
-constexpr EMsgIDDB EMsgIDDB_MAX = SERVER2DB_UNREGISTER_LOGIN;
-constexpr int EMsgIDDB_ARRAYSIZE = EMsgIDDB_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDDB_descriptor();
-template<typename T>
-inline const std::string& EMsgIDDB_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, EMsgIDDB>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function EMsgIDDB_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    EMsgIDDB_descriptor(), enum_t_value);
-}
-inline bool EMsgIDDB_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EMsgIDDB* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EMsgIDDB>(
-    EMsgIDDB_descriptor(), name, value);
-}
 // ===================================================================
 
 class MsgRegisterServer PROTOBUF_FINAL :
@@ -775,21 +720,6 @@ inline void MsgDBRegisterLogin::set_port(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::EMsgIDServerInternalProto> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::EMsgIDServerInternalProto>() {
-  return ::EMsgIDServerInternalProto_descriptor();
-}
-template <> struct is_proto_enum< ::EMsgIDDB> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::EMsgIDDB>() {
-  return ::EMsgIDDB_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

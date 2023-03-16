@@ -1,6 +1,2 @@
 syntax = "proto3";
 
-enum EMsgIDGame
-{
-	MsgIDGame_Null				= 0;
-}

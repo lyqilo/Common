@@ -29,7 +29,6 @@
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_Game_2eproto
@@ -55,30 +54,6 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 PROTOBUF_NAMESPACE_OPEN
 PROTOBUF_NAMESPACE_CLOSE
 
-enum EMsgIDGame : int {
-  MsgIDGame_Null = 0,
-  EMsgIDGame_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  EMsgIDGame_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool EMsgIDGame_IsValid(int value);
-constexpr EMsgIDGame EMsgIDGame_MIN = MsgIDGame_Null;
-constexpr EMsgIDGame EMsgIDGame_MAX = MsgIDGame_Null;
-constexpr int EMsgIDGame_ARRAYSIZE = EMsgIDGame_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDGame_descriptor();
-template<typename T>
-inline const std::string& EMsgIDGame_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, EMsgIDGame>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function EMsgIDGame_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    EMsgIDGame_descriptor(), enum_t_value);
-}
-inline bool EMsgIDGame_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EMsgIDGame* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EMsgIDGame>(
-    EMsgIDGame_descriptor(), name, value);
-}
 // ===================================================================
 
 
@@ -97,16 +72,6 @@ inline bool EMsgIDGame_Parse(
 
 // @@protoc_insertion_point(namespace_scope)
 
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::EMsgIDGame> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::EMsgIDGame>() {
-  return ::EMsgIDGame_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

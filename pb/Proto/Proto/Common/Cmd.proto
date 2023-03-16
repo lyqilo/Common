@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-enum EMsgIDMain
-{
-	//1-100 服务器内部主消息
-	EMsgIDMain_Null		= 0;
-	SERVER_REGISTER		= 1;
-	LOGIN_TO_CENTER		= 2;
-}
