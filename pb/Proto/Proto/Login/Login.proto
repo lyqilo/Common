@@ -4,4 +4,22 @@ enum EMsgIDLogin
 {
 	MsgIDLogin_Null				= 0;
 	MsgIDLogin					= 1;	//玩家登录
+	MsgIDLoginResp				= 2;	//玩家登录返回
+}
+
+message MsgPlayerLogin
+{
+	string		account			= 1;	//玩家账号
+}
+
+message MsgPlayerLoginResp
+{
+	int32		user_id			= 1;	//玩家ID
+	int32		beautiful_id	= 2;	//玩家靓号
+	string		nickname		= 3;	//玩家昵称
+	int32		user_type		= 4;	//玩家类型
+	uint64		coin			= 5;	//玩家金币
+	uint64		bank_coin		= 6;	//银行金币
+	int32		head_id			= 7;	//头像id
+	string		phone_num		= 8;	//手机号
 }

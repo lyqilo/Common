@@ -92,7 +92,7 @@ if (BitConverter.IsLittleEndian){Array.Reverse(rData, nOffset, 4);}
 int nValue13K = BitConverter.ToInt32(rData, nOffset); nOffset += 4;
 if (BitConverter.IsLittleEndian){Array.Reverse(rData, nOffset, 8);}
 double nValue13V = BitConverter.ToDouble(rData, nOffset); nOffset += 8;
-this.Value13 = new NNKV(nK, nV);
+this.Value13 = new NNKV(nValue13K, nValue13V);
 return nOffset;
 }
 }
