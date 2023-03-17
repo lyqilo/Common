@@ -64,6 +64,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Login_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::MsgPlayerLoginResp, res_code_),
   PROTOBUF_FIELD_OFFSET(::MsgPlayerLoginResp, user_id_),
   PROTOBUF_FIELD_OFFSET(::MsgPlayerLoginResp, beautiful_id_),
   PROTOBUF_FIELD_OFFSET(::MsgPlayerLoginResp, nickname_),
@@ -85,11 +86,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_Login_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\013Login.proto\"!\n\016MsgPlayerLogin\022\017\n\007accou"
-  "nt\030\001 \001(\t\"\245\001\n\022MsgPlayerLoginResp\022\017\n\007user_"
-  "id\030\001 \001(\005\022\024\n\014beautiful_id\030\002 \001(\005\022\020\n\010nickna"
-  "me\030\003 \001(\t\022\021\n\tuser_type\030\004 \001(\005\022\014\n\004coin\030\005 \001("
-  "\004\022\021\n\tbank_coin\030\006 \001(\004\022\017\n\007head_id\030\007 \001(\005\022\021\n"
-  "\tphone_num\030\010 \001(\tb\006proto3"
+  "nt\030\001 \001(\t\"\267\001\n\022MsgPlayerLoginResp\022\020\n\010res_c"
+  "ode\030\001 \001(\005\022\017\n\007user_id\030\002 \001(\005\022\024\n\014beautiful_"
+  "id\030\003 \001(\005\022\020\n\010nickname\030\004 \001(\t\022\021\n\tuser_type\030"
+  "\005 \001(\005\022\014\n\004coin\030\006 \001(\004\022\021\n\tbank_coin\030\007 \001(\004\022\017"
+  "\n\007head_id\030\010 \001(\005\022\021\n\tphone_num\030\t \001(\tb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Login_2eproto_deps[1] = {
 };
@@ -99,7 +101,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Log
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Login_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Login_2eproto = {
-  false, false, descriptor_table_protodef_Login_2eproto, "Login.proto", 224,
+  false, false, descriptor_table_protodef_Login_2eproto, "Login.proto", 242,
   &descriptor_table_Login_2eproto_once, descriptor_table_Login_2eproto_sccs, descriptor_table_Login_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_Login_2eproto::offsets,
   file_level_metadata_Login_2eproto, 2, file_level_enum_descriptors_Login_2eproto, file_level_service_descriptors_Login_2eproto,
@@ -339,9 +341,9 @@ MsgPlayerLoginResp::MsgPlayerLoginResp(const MsgPlayerLoginResp& from)
     phone_num_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_num(), 
       GetArena());
   }
-  ::memcpy(&user_id_, &from.user_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&bank_coin_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
+  ::memcpy(&res_code_, &from.res_code_,
+    static_cast<size_t>(reinterpret_cast<char*>(&head_id_) -
+    reinterpret_cast<char*>(&res_code_)) + sizeof(head_id_));
   // @@protoc_insertion_point(copy_constructor:MsgPlayerLoginResp)
 }
 
@@ -350,9 +352,9 @@ void MsgPlayerLoginResp::SharedCtor() {
   nickname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   phone_num_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&user_id_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&bank_coin_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
+      reinterpret_cast<char*>(&res_code_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&head_id_) -
+      reinterpret_cast<char*>(&res_code_)) + sizeof(head_id_));
 }
 
 MsgPlayerLoginResp::~MsgPlayerLoginResp() {
@@ -390,9 +392,9 @@ void MsgPlayerLoginResp::Clear() {
 
   nickname_.ClearToEmpty();
   phone_num_.ClearToEmpty();
-  ::memset(&user_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&bank_coin_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
+  ::memset(&res_code_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&head_id_) -
+      reinterpret_cast<char*>(&res_code_)) + sizeof(head_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -403,60 +405,67 @@ const char* MsgPlayerLoginResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int32 user_id = 1;
+      // int32 res_code = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          res_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 user_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           user_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 beautiful_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // int32 beautiful_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           beautiful_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string nickname = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // string nickname = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_nickname();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "MsgPlayerLoginResp.nickname"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 user_type = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // int32 user_type = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           user_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 coin = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // uint64 coin = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           coin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 bank_coin = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // uint64 bank_coin = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           bank_coin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 head_id = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+      // int32 head_id = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           head_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string phone_num = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // string phone_num = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_phone_num();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "MsgPlayerLoginResp.phone_num"));
@@ -491,60 +500,66 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 user_id = 1;
+  // int32 res_code = 1;
+  if (this->res_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_res_code(), target);
+  }
+
+  // int32 user_id = 2;
   if (this->user_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_user_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_user_id(), target);
   }
 
-  // int32 beautiful_id = 2;
+  // int32 beautiful_id = 3;
   if (this->beautiful_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_beautiful_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_beautiful_id(), target);
   }
 
-  // string nickname = 3;
+  // string nickname = 4;
   if (this->nickname().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_nickname().data(), static_cast<int>(this->_internal_nickname().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "MsgPlayerLoginResp.nickname");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_nickname(), target);
+        4, this->_internal_nickname(), target);
   }
 
-  // int32 user_type = 4;
+  // int32 user_type = 5;
   if (this->user_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_user_type(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_user_type(), target);
   }
 
-  // uint64 coin = 5;
+  // uint64 coin = 6;
   if (this->coin() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_coin(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_coin(), target);
   }
 
-  // uint64 bank_coin = 6;
+  // uint64 bank_coin = 7;
   if (this->bank_coin() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_bank_coin(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_bank_coin(), target);
   }
 
-  // int32 head_id = 7;
+  // int32 head_id = 8;
   if (this->head_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_head_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_head_id(), target);
   }
 
-  // string phone_num = 8;
+  // string phone_num = 9;
   if (this->phone_num().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_phone_num().data(), static_cast<int>(this->_internal_phone_num().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "MsgPlayerLoginResp.phone_num");
     target = stream->WriteStringMaybeAliased(
-        8, this->_internal_phone_num(), target);
+        9, this->_internal_phone_num(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -563,60 +578,67 @@ size_t MsgPlayerLoginResp::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string nickname = 3;
+  // string nickname = 4;
   if (this->nickname().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_nickname());
   }
 
-  // string phone_num = 8;
+  // string phone_num = 9;
   if (this->phone_num().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_phone_num());
   }
 
-  // int32 user_id = 1;
+  // int32 res_code = 1;
+  if (this->res_code() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_res_code());
+  }
+
+  // int32 user_id = 2;
   if (this->user_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_user_id());
   }
 
-  // int32 beautiful_id = 2;
+  // int32 beautiful_id = 3;
   if (this->beautiful_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_beautiful_id());
   }
 
-  // uint64 coin = 5;
-  if (this->coin() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_coin());
-  }
-
-  // int32 user_type = 4;
+  // int32 user_type = 5;
   if (this->user_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_user_type());
   }
 
-  // int32 head_id = 7;
-  if (this->head_id() != 0) {
+  // uint64 coin = 6;
+  if (this->coin() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_head_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_coin());
   }
 
-  // uint64 bank_coin = 6;
+  // uint64 bank_coin = 7;
   if (this->bank_coin() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_bank_coin());
+  }
+
+  // int32 head_id = 8;
+  if (this->head_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_head_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -656,23 +678,26 @@ void MsgPlayerLoginResp::MergeFrom(const MsgPlayerLoginResp& from) {
   if (from.phone_num().size() > 0) {
     _internal_set_phone_num(from._internal_phone_num());
   }
+  if (from.res_code() != 0) {
+    _internal_set_res_code(from._internal_res_code());
+  }
   if (from.user_id() != 0) {
     _internal_set_user_id(from._internal_user_id());
   }
   if (from.beautiful_id() != 0) {
     _internal_set_beautiful_id(from._internal_beautiful_id());
   }
-  if (from.coin() != 0) {
-    _internal_set_coin(from._internal_coin());
-  }
   if (from.user_type() != 0) {
     _internal_set_user_type(from._internal_user_type());
   }
-  if (from.head_id() != 0) {
-    _internal_set_head_id(from._internal_head_id());
+  if (from.coin() != 0) {
+    _internal_set_coin(from._internal_coin());
   }
   if (from.bank_coin() != 0) {
     _internal_set_bank_coin(from._internal_bank_coin());
+  }
+  if (from.head_id() != 0) {
+    _internal_set_head_id(from._internal_head_id());
   }
 }
 
@@ -700,11 +725,11 @@ void MsgPlayerLoginResp::InternalSwap(MsgPlayerLoginResp* other) {
   nickname_.Swap(&other->nickname_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   phone_num_.Swap(&other->phone_num_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MsgPlayerLoginResp, bank_coin_)
-      + sizeof(MsgPlayerLoginResp::bank_coin_)
-      - PROTOBUF_FIELD_OFFSET(MsgPlayerLoginResp, user_id_)>(
-          reinterpret_cast<char*>(&user_id_),
-          reinterpret_cast<char*>(&other->user_id_));
+      PROTOBUF_FIELD_OFFSET(MsgPlayerLoginResp, head_id_)
+      + sizeof(MsgPlayerLoginResp::head_id_)
+      - PROTOBUF_FIELD_OFFSET(MsgPlayerLoginResp, res_code_)>(
+          reinterpret_cast<char*>(&res_code_),
+          reinterpret_cast<char*>(&other->res_code_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MsgPlayerLoginResp::GetMetadata() const {

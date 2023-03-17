@@ -2,9 +2,8 @@ syntax = "proto3";
 
 enum EMsgIDServerMain
 {
-	MsgIDServerMain_Null		= 0;
-	SERVER_REGISTER				= 1;
-	LOGIN_TO_CENTER				= 2;
+	MsgIDServerMain_Null						= 0;
+	LOGIN_TO_CENTER_SERVER_MANAGER				= 1;
 }
 
 enum EMsgIDServerInternalProto
@@ -16,9 +15,13 @@ enum EMsgIDServerInternalProto
 
 enum EMsgIDDB
 {
-	MsgIDDB_NULL					= 0;
-	SERVER2DB_UPDATE_ONLINE_NUM		= 1;	//更新在线人数
-	SERVER2DB_INIT_ONLINE_NUM		= 2;	//初始化在线人数
-	SERVER2DB_REGISTER_LOGIN		= 3;	//登录服务器注册
-	SERVER2DB_UNREGISTER_LOGIN		= 4;	//登录服务器关闭
+	//0-1000 Center_Server2DB
+	MsgIDDB_NULL							= 0;
+	CENTER_SERVER2DB_UPDATE_ONLINE_NUM		= 1;	//更新在线人数
+	CENTER_SERVER2DB_INIT_ONLINE_NUM		= 2;	//初始化在线人数
+	CENTER_SERVER2DB_REGISTER_LOGIN			= 3;	//登录服务器注册
+	CENTER_SERVER2DB_UNREGISTER_LOGIN		= 4;	//登录服务器关闭
+	//1001-2000 LoginServer2DB
+	LOGIN_SERVER2DB_LOGIN					= 1001;	//玩家登录
+	DB2LOGIN_SERVER_LOGIN					= 1002;	//玩家登录返回
 }

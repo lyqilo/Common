@@ -57,14 +57,13 @@ PROTOBUF_NAMESPACE_CLOSE
 
 enum EMsgIDServerMain : int {
   MsgIDServerMain_Null = 0,
-  SERVER_REGISTER = 1,
-  LOGIN_TO_CENTER = 2,
+  LOGIN_TO_CENTER_SERVER_MANAGER = 1,
   EMsgIDServerMain_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EMsgIDServerMain_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EMsgIDServerMain_IsValid(int value);
 constexpr EMsgIDServerMain EMsgIDServerMain_MIN = MsgIDServerMain_Null;
-constexpr EMsgIDServerMain EMsgIDServerMain_MAX = LOGIN_TO_CENTER;
+constexpr EMsgIDServerMain EMsgIDServerMain_MAX = LOGIN_TO_CENTER_SERVER_MANAGER;
 constexpr int EMsgIDServerMain_ARRAYSIZE = EMsgIDServerMain_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDServerMain_descriptor();
@@ -109,16 +108,18 @@ inline bool EMsgIDServerInternalProto_Parse(
 }
 enum EMsgIDDB : int {
   MsgIDDB_NULL = 0,
-  SERVER2DB_UPDATE_ONLINE_NUM = 1,
-  SERVER2DB_INIT_ONLINE_NUM = 2,
-  SERVER2DB_REGISTER_LOGIN = 3,
-  SERVER2DB_UNREGISTER_LOGIN = 4,
+  CENTER_SERVER2DB_UPDATE_ONLINE_NUM = 1,
+  CENTER_SERVER2DB_INIT_ONLINE_NUM = 2,
+  CENTER_SERVER2DB_REGISTER_LOGIN = 3,
+  CENTER_SERVER2DB_UNREGISTER_LOGIN = 4,
+  LOGIN_SERVER2DB_LOGIN = 1001,
+  DB2LOGIN_SERVER_LOGIN = 1002,
   EMsgIDDB_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EMsgIDDB_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EMsgIDDB_IsValid(int value);
 constexpr EMsgIDDB EMsgIDDB_MIN = MsgIDDB_NULL;
-constexpr EMsgIDDB EMsgIDDB_MAX = SERVER2DB_UNREGISTER_LOGIN;
+constexpr EMsgIDDB EMsgIDDB_MAX = DB2LOGIN_SERVER_LOGIN;
 constexpr int EMsgIDDB_ARRAYSIZE = EMsgIDDB_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDDB_descriptor();

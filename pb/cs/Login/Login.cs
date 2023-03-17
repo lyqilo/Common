@@ -23,16 +23,16 @@ public static partial class LoginReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChdQcm90by9Mb2dpbi9Mb2dpbi5wcm90byIhCg5Nc2dQbGF5ZXJMb2dpbhIP",
-          "CgdhY2NvdW50GAEgASgJIqUBChJNc2dQbGF5ZXJMb2dpblJlc3ASDwoHdXNl",
-          "cl9pZBgBIAEoBRIUCgxiZWF1dGlmdWxfaWQYAiABKAUSEAoIbmlja25hbWUY",
-          "AyABKAkSEQoJdXNlcl90eXBlGAQgASgFEgwKBGNvaW4YBSABKAQSEQoJYmFu",
-          "a19jb2luGAYgASgEEg8KB2hlYWRfaWQYByABKAUSEQoJcGhvbmVfbnVtGAgg",
-          "ASgJYgZwcm90bzM="));
+          "CgdhY2NvdW50GAEgASgJIrcBChJNc2dQbGF5ZXJMb2dpblJlc3ASEAoIcmVz",
+          "X2NvZGUYASABKAUSDwoHdXNlcl9pZBgCIAEoBRIUCgxiZWF1dGlmdWxfaWQY",
+          "AyABKAUSEAoIbmlja25hbWUYBCABKAkSEQoJdXNlcl90eXBlGAUgASgFEgwK",
+          "BGNvaW4YBiABKAQSEQoJYmFua19jb2luGAcgASgEEg8KB2hlYWRfaWQYCCAB",
+          "KAUSEQoJcGhvbmVfbnVtGAkgASgJYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MsgPlayerLogin), global::MsgPlayerLogin.Parser, new[]{ "Account" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::MsgPlayerLoginResp), global::MsgPlayerLoginResp.Parser, new[]{ "UserId", "BeautifulId", "Nickname", "UserType", "Coin", "BankCoin", "HeadId", "PhoneNum" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::MsgPlayerLoginResp), global::MsgPlayerLoginResp.Parser, new[]{ "ResCode", "UserId", "BeautifulId", "Nickname", "UserType", "Coin", "BankCoin", "HeadId", "PhoneNum" }, null, null, null, null)
         }));
   }
   #endregion
@@ -243,6 +243,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public MsgPlayerLoginResp(MsgPlayerLoginResp other) : this() {
+    resCode_ = other.resCode_;
     userId_ = other.userId_;
     beautifulId_ = other.beautifulId_;
     nickname_ = other.nickname_;
@@ -259,8 +260,22 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
     return new MsgPlayerLoginResp(this);
   }
 
+  /// <summary>Field number for the "res_code" field.</summary>
+  public const int ResCodeFieldNumber = 1;
+  private int resCode_;
+  /// <summary>
+  ///登录返回码(0:成功 非0:失败)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int ResCode {
+    get { return resCode_; }
+    set {
+      resCode_ = value;
+    }
+  }
+
   /// <summary>Field number for the "user_id" field.</summary>
-  public const int UserIdFieldNumber = 1;
+  public const int UserIdFieldNumber = 2;
   private int userId_;
   /// <summary>
   ///玩家ID
@@ -274,7 +289,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "beautiful_id" field.</summary>
-  public const int BeautifulIdFieldNumber = 2;
+  public const int BeautifulIdFieldNumber = 3;
   private int beautifulId_;
   /// <summary>
   ///玩家靓号
@@ -288,7 +303,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "nickname" field.</summary>
-  public const int NicknameFieldNumber = 3;
+  public const int NicknameFieldNumber = 4;
   private string nickname_ = "";
   /// <summary>
   ///玩家昵称
@@ -302,7 +317,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "user_type" field.</summary>
-  public const int UserTypeFieldNumber = 4;
+  public const int UserTypeFieldNumber = 5;
   private int userType_;
   /// <summary>
   ///玩家类型
@@ -316,7 +331,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "coin" field.</summary>
-  public const int CoinFieldNumber = 5;
+  public const int CoinFieldNumber = 6;
   private ulong coin_;
   /// <summary>
   ///玩家金币
@@ -330,7 +345,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "bank_coin" field.</summary>
-  public const int BankCoinFieldNumber = 6;
+  public const int BankCoinFieldNumber = 7;
   private ulong bankCoin_;
   /// <summary>
   ///银行金币
@@ -344,7 +359,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "head_id" field.</summary>
-  public const int HeadIdFieldNumber = 7;
+  public const int HeadIdFieldNumber = 8;
   private int headId_;
   /// <summary>
   ///头像id
@@ -358,7 +373,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   }
 
   /// <summary>Field number for the "phone_num" field.</summary>
-  public const int PhoneNumFieldNumber = 8;
+  public const int PhoneNumFieldNumber = 9;
   private string phoneNum_ = "";
   /// <summary>
   ///手机号
@@ -384,6 +399,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (ResCode != other.ResCode) return false;
     if (UserId != other.UserId) return false;
     if (BeautifulId != other.BeautifulId) return false;
     if (Nickname != other.Nickname) return false;
@@ -398,6 +414,7 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    if (ResCode != 0) hash ^= ResCode.GetHashCode();
     if (UserId != 0) hash ^= UserId.GetHashCode();
     if (BeautifulId != 0) hash ^= BeautifulId.GetHashCode();
     if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
@@ -422,36 +439,40 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (UserId != 0) {
+    if (ResCode != 0) {
       output.WriteRawTag(8);
+      output.WriteInt32(ResCode);
+    }
+    if (UserId != 0) {
+      output.WriteRawTag(16);
       output.WriteInt32(UserId);
     }
     if (BeautifulId != 0) {
-      output.WriteRawTag(16);
+      output.WriteRawTag(24);
       output.WriteInt32(BeautifulId);
     }
     if (Nickname.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(Nickname);
     }
     if (UserType != 0) {
-      output.WriteRawTag(32);
+      output.WriteRawTag(40);
       output.WriteInt32(UserType);
     }
     if (Coin != 0UL) {
-      output.WriteRawTag(40);
+      output.WriteRawTag(48);
       output.WriteUInt64(Coin);
     }
     if (BankCoin != 0UL) {
-      output.WriteRawTag(48);
+      output.WriteRawTag(56);
       output.WriteUInt64(BankCoin);
     }
     if (HeadId != 0) {
-      output.WriteRawTag(56);
+      output.WriteRawTag(64);
       output.WriteInt32(HeadId);
     }
     if (PhoneNum.Length != 0) {
-      output.WriteRawTag(66);
+      output.WriteRawTag(74);
       output.WriteString(PhoneNum);
     }
     if (_unknownFields != null) {
@@ -463,36 +484,40 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (UserId != 0) {
+    if (ResCode != 0) {
       output.WriteRawTag(8);
+      output.WriteInt32(ResCode);
+    }
+    if (UserId != 0) {
+      output.WriteRawTag(16);
       output.WriteInt32(UserId);
     }
     if (BeautifulId != 0) {
-      output.WriteRawTag(16);
+      output.WriteRawTag(24);
       output.WriteInt32(BeautifulId);
     }
     if (Nickname.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(Nickname);
     }
     if (UserType != 0) {
-      output.WriteRawTag(32);
+      output.WriteRawTag(40);
       output.WriteInt32(UserType);
     }
     if (Coin != 0UL) {
-      output.WriteRawTag(40);
+      output.WriteRawTag(48);
       output.WriteUInt64(Coin);
     }
     if (BankCoin != 0UL) {
-      output.WriteRawTag(48);
+      output.WriteRawTag(56);
       output.WriteUInt64(BankCoin);
     }
     if (HeadId != 0) {
-      output.WriteRawTag(56);
+      output.WriteRawTag(64);
       output.WriteInt32(HeadId);
     }
     if (PhoneNum.Length != 0) {
-      output.WriteRawTag(66);
+      output.WriteRawTag(74);
       output.WriteString(PhoneNum);
     }
     if (_unknownFields != null) {
@@ -504,6 +529,9 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    if (ResCode != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResCode);
+    }
     if (UserId != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(UserId);
     }
@@ -538,6 +566,9 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
   public void MergeFrom(MsgPlayerLoginResp other) {
     if (other == null) {
       return;
+    }
+    if (other.ResCode != 0) {
+      ResCode = other.ResCode;
     }
     if (other.UserId != 0) {
       UserId = other.UserId;
@@ -578,34 +609,38 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          UserId = input.ReadInt32();
+          ResCode = input.ReadInt32();
           break;
         }
         case 16: {
+          UserId = input.ReadInt32();
+          break;
+        }
+        case 24: {
           BeautifulId = input.ReadInt32();
           break;
         }
-        case 26: {
+        case 34: {
           Nickname = input.ReadString();
           break;
         }
-        case 32: {
+        case 40: {
           UserType = input.ReadInt32();
           break;
         }
-        case 40: {
+        case 48: {
           Coin = input.ReadUInt64();
           break;
         }
-        case 48: {
+        case 56: {
           BankCoin = input.ReadUInt64();
           break;
         }
-        case 56: {
+        case 64: {
           HeadId = input.ReadInt32();
           break;
         }
-        case 66: {
+        case 74: {
           PhoneNum = input.ReadString();
           break;
         }
@@ -624,34 +659,38 @@ public sealed partial class MsgPlayerLoginResp : pb::IMessage<MsgPlayerLoginResp
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          UserId = input.ReadInt32();
+          ResCode = input.ReadInt32();
           break;
         }
         case 16: {
+          UserId = input.ReadInt32();
+          break;
+        }
+        case 24: {
           BeautifulId = input.ReadInt32();
           break;
         }
-        case 26: {
+        case 34: {
           Nickname = input.ReadString();
           break;
         }
-        case 32: {
+        case 40: {
           UserType = input.ReadInt32();
           break;
         }
-        case 40: {
+        case 48: {
           Coin = input.ReadUInt64();
           break;
         }
-        case 48: {
+        case 56: {
           BankCoin = input.ReadUInt64();
           break;
         }
-        case 56: {
+        case 64: {
           HeadId = input.ReadInt32();
           break;
         }
-        case 66: {
+        case 74: {
           PhoneNum = input.ReadString();
           break;
         }

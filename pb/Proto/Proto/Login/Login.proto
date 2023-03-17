@@ -8,12 +8,13 @@ message MsgPlayerLogin
 
 message MsgPlayerLoginResp
 {
-	int32		user_id			= 1;	//玩家ID
-	int32		beautiful_id	= 2;	//玩家靓号
-	string		nickname		= 3;	//玩家昵称
-	int32		user_type		= 4;	//玩家类型
-	uint64		coin			= 5;	//玩家金币
-	uint64		bank_coin		= 6;	//银行金币
-	int32		head_id			= 7;	//头像id
-	string		phone_num		= 8;	//手机号
+	int32		res_code		= 1;	//登录返回码(0:成功 非0:失败)
+	int32		user_id			= 2;	//玩家ID
+	int32		beautiful_id	= 3;	//玩家靓号
+	string		nickname		= 4;	//玩家昵称
+	int32		user_type		= 5;	//玩家类型
+	uint64		coin			= 6;	//玩家金币
+	uint64		bank_coin		= 7;	//银行金币
+	int32		head_id			= 8;	//头像id
+	string		phone_num		= 9;	//手机号
 }

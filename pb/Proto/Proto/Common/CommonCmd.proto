@@ -2,7 +2,15 @@ syntax = "proto3";
 
 enum EMsgIDMain
 {
-	EMsgIDMain_Null		= 0;
+	EMsgIDMain_Null			= 0;
+	EMsgIDMain_USERINFO		= 1;	//玩家信息
+}
+
+enum EMsgIDLogin
+{
+	MsgIDLogin_Null				= 0;
+	MsgIDLogin_Login			= 1;		//玩家登录
+	MsgIDLogin_LoginResp		= 2;		//玩家登录返回
 }
 
 enum EMsgIDGame

@@ -321,16 +321,17 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNicknameFieldNumber = 3,
-    kPhoneNumFieldNumber = 8,
-    kUserIdFieldNumber = 1,
-    kBeautifulIdFieldNumber = 2,
-    kCoinFieldNumber = 5,
-    kUserTypeFieldNumber = 4,
-    kHeadIdFieldNumber = 7,
-    kBankCoinFieldNumber = 6,
+    kNicknameFieldNumber = 4,
+    kPhoneNumFieldNumber = 9,
+    kResCodeFieldNumber = 1,
+    kUserIdFieldNumber = 2,
+    kBeautifulIdFieldNumber = 3,
+    kUserTypeFieldNumber = 5,
+    kCoinFieldNumber = 6,
+    kBankCoinFieldNumber = 7,
+    kHeadIdFieldNumber = 8,
   };
-  // string nickname = 3;
+  // string nickname = 4;
   void clear_nickname();
   const std::string& nickname() const;
   void set_nickname(const std::string& value);
@@ -346,7 +347,7 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   std::string* _internal_mutable_nickname();
   public:
 
-  // string phone_num = 8;
+  // string phone_num = 9;
   void clear_phone_num();
   const std::string& phone_num() const;
   void set_phone_num(const std::string& value);
@@ -362,7 +363,16 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   std::string* _internal_mutable_phone_num();
   public:
 
-  // int32 user_id = 1;
+  // int32 res_code = 1;
+  void clear_res_code();
+  ::PROTOBUF_NAMESPACE_ID::int32 res_code() const;
+  void set_res_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_res_code() const;
+  void _internal_set_res_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 user_id = 2;
   void clear_user_id();
   ::PROTOBUF_NAMESPACE_ID::int32 user_id() const;
   void set_user_id(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -371,7 +381,7 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   void _internal_set_user_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 beautiful_id = 2;
+  // int32 beautiful_id = 3;
   void clear_beautiful_id();
   ::PROTOBUF_NAMESPACE_ID::int32 beautiful_id() const;
   void set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -380,16 +390,7 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   void _internal_set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint64 coin = 5;
-  void clear_coin();
-  ::PROTOBUF_NAMESPACE_ID::uint64 coin() const;
-  void set_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_coin() const;
-  void _internal_set_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // int32 user_type = 4;
+  // int32 user_type = 5;
   void clear_user_type();
   ::PROTOBUF_NAMESPACE_ID::int32 user_type() const;
   void set_user_type(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -398,22 +399,31 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   void _internal_set_user_type(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 head_id = 7;
-  void clear_head_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 head_id() const;
-  void set_head_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // uint64 coin = 6;
+  void clear_coin();
+  ::PROTOBUF_NAMESPACE_ID::uint64 coin() const;
+  void set_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_head_id() const;
-  void _internal_set_head_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_coin() const;
+  void _internal_set_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bank_coin = 6;
+  // uint64 bank_coin = 7;
   void clear_bank_coin();
   ::PROTOBUF_NAMESPACE_ID::uint64 bank_coin() const;
   void set_bank_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal_bank_coin() const;
   void _internal_set_bank_coin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // int32 head_id = 8;
+  void clear_head_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 head_id() const;
+  void set_head_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_head_id() const;
+  void _internal_set_head_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:MsgPlayerLoginResp)
@@ -425,12 +435,13 @@ class MsgPlayerLoginResp PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nickname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_num_;
+  ::PROTOBUF_NAMESPACE_ID::int32 res_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 user_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 beautiful_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 coin_;
   ::PROTOBUF_NAMESPACE_ID::int32 user_type_;
-  ::PROTOBUF_NAMESPACE_ID::int32 head_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 coin_;
   ::PROTOBUF_NAMESPACE_ID::uint64 bank_coin_;
+  ::PROTOBUF_NAMESPACE_ID::int32 head_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Login_2eproto;
 };
@@ -510,7 +521,27 @@ inline void MsgPlayerLogin::set_allocated_account(std::string* account) {
 
 // MsgPlayerLoginResp
 
-// int32 user_id = 1;
+// int32 res_code = 1;
+inline void MsgPlayerLoginResp::clear_res_code() {
+  res_code_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgPlayerLoginResp::_internal_res_code() const {
+  return res_code_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgPlayerLoginResp::res_code() const {
+  // @@protoc_insertion_point(field_get:MsgPlayerLoginResp.res_code)
+  return _internal_res_code();
+}
+inline void MsgPlayerLoginResp::_internal_set_res_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  res_code_ = value;
+}
+inline void MsgPlayerLoginResp::set_res_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_res_code(value);
+  // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.res_code)
+}
+
+// int32 user_id = 2;
 inline void MsgPlayerLoginResp::clear_user_id() {
   user_id_ = 0;
 }
@@ -530,7 +561,7 @@ inline void MsgPlayerLoginResp::set_user_id(::PROTOBUF_NAMESPACE_ID::int32 value
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.user_id)
 }
 
-// int32 beautiful_id = 2;
+// int32 beautiful_id = 3;
 inline void MsgPlayerLoginResp::clear_beautiful_id() {
   beautiful_id_ = 0;
 }
@@ -550,7 +581,7 @@ inline void MsgPlayerLoginResp::set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.beautiful_id)
 }
 
-// string nickname = 3;
+// string nickname = 4;
 inline void MsgPlayerLoginResp::clear_nickname() {
   nickname_.ClearToEmpty();
 }
@@ -611,7 +642,7 @@ inline void MsgPlayerLoginResp::set_allocated_nickname(std::string* nickname) {
   // @@protoc_insertion_point(field_set_allocated:MsgPlayerLoginResp.nickname)
 }
 
-// int32 user_type = 4;
+// int32 user_type = 5;
 inline void MsgPlayerLoginResp::clear_user_type() {
   user_type_ = 0;
 }
@@ -631,7 +662,7 @@ inline void MsgPlayerLoginResp::set_user_type(::PROTOBUF_NAMESPACE_ID::int32 val
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.user_type)
 }
 
-// uint64 coin = 5;
+// uint64 coin = 6;
 inline void MsgPlayerLoginResp::clear_coin() {
   coin_ = PROTOBUF_ULONGLONG(0);
 }
@@ -651,7 +682,7 @@ inline void MsgPlayerLoginResp::set_coin(::PROTOBUF_NAMESPACE_ID::uint64 value) 
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.coin)
 }
 
-// uint64 bank_coin = 6;
+// uint64 bank_coin = 7;
 inline void MsgPlayerLoginResp::clear_bank_coin() {
   bank_coin_ = PROTOBUF_ULONGLONG(0);
 }
@@ -671,7 +702,7 @@ inline void MsgPlayerLoginResp::set_bank_coin(::PROTOBUF_NAMESPACE_ID::uint64 va
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.bank_coin)
 }
 
-// int32 head_id = 7;
+// int32 head_id = 8;
 inline void MsgPlayerLoginResp::clear_head_id() {
   head_id_ = 0;
 }
@@ -691,7 +722,7 @@ inline void MsgPlayerLoginResp::set_head_id(::PROTOBUF_NAMESPACE_ID::int32 value
   // @@protoc_insertion_point(field_set:MsgPlayerLoginResp.head_id)
 }
 
-// string phone_num = 8;
+// string phone_num = 9;
 inline void MsgPlayerLoginResp::clear_phone_num() {
   phone_num_.ClearToEmpty();
 }

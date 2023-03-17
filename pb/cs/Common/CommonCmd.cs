@@ -22,12 +22,14 @@ public static partial class CommonCmdReflection {
   static CommonCmdReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChxQcm90by9Db21tb24vQ29tbW9uQ21kLnByb3RvKiEKCkVNc2dJRE1haW4S",
-          "EwoPRU1zZ0lETWFpbl9OdWxsEAAqIAoKRU1zZ0lER2FtZRISCg5Nc2dJREdh",
-          "bWVfTnVsbBAAYgZwcm90bzM="));
+          "ChxQcm90by9Db21tb24vQ29tbW9uQ21kLnByb3RvKjoKCkVNc2dJRE1haW4S",
+          "EwoPRU1zZ0lETWFpbl9OdWxsEAASFwoTRU1zZ0lETWFpbl9VU0VSSU5GTxAB",
+          "KlIKC0VNc2dJRExvZ2luEhMKD01zZ0lETG9naW5fTnVsbBAAEhQKEE1zZ0lE",
+          "TG9naW5fTG9naW4QARIYChRNc2dJRExvZ2luX0xvZ2luUmVzcBACKiAKCkVN",
+          "c2dJREdhbWUSEgoOTXNnSURHYW1lX051bGwQAGIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDMain), typeof(global::EMsgIDGame), }, null, null));
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDMain), typeof(global::EMsgIDLogin), typeof(global::EMsgIDGame), }, null, null));
   }
   #endregion
 
@@ -35,6 +37,22 @@ public static partial class CommonCmdReflection {
 #region Enums
 public enum EMsgIDMain {
   [pbr::OriginalName("EMsgIDMain_Null")] Null = 0,
+  /// <summary>
+  ///玩家信息
+  /// </summary>
+  [pbr::OriginalName("EMsgIDMain_USERINFO")] Userinfo = 1,
+}
+
+public enum EMsgIDLogin {
+  [pbr::OriginalName("MsgIDLogin_Null")] MsgIdloginNull = 0,
+  /// <summary>
+  ///玩家登录
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_Login")] MsgIdloginLogin = 1,
+  /// <summary>
+  ///玩家登录返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_LoginResp")] MsgIdloginLoginResp = 2,
 }
 
 public enum EMsgIDGame {
