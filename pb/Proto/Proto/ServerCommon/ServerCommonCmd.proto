@@ -24,4 +24,5 @@ enum EMsgIDDB
 	//1001-2000 LoginServer2DB
 	LOGIN_SERVER2DB_LOGIN					= 1001;	//玩家登录
 	DB2LOGIN_SERVER_LOGIN					= 1002;	//玩家登录返回
+	DB2LOGIN_LOAD_PLAYER_DATA				= 1003;	//加载玩家数据
 }

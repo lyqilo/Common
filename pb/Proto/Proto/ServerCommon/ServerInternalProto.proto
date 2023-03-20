@@ -21,3 +21,20 @@ message MsgDBRegisterLogin
 	int32	server_id			= 1;
 	int32	port				= 2;
 }
+
+//玩家属性
+message MsgPlayerAttribute
+{
+	int32	user_id				= 1;		//userid
+	int32	beautiful_id		= 2;		//靓号
+	int32	user_type			= 3;		//玩家类型
+	string	phone				= 4;		//电话
+	int64	coin				= 5;		//金币
+	int64	bank_coin			= 6;		//银行金币
+}
+
+//玩家信息
+message MsgPlayerInfo
+{
+	MsgPlayerAttribute	player_attribute		= 1;	//玩家属性
+}
