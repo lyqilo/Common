@@ -35,6 +35,23 @@ class MsgPlayerInfoDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MsgPlayerInfo> _instance;
 } _MsgPlayerInfo_default_instance_;
+class MsgDBLoginOutDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MsgDBLoginOut> _instance;
+} _MsgDBLoginOut_default_instance_;
+static void InitDefaultsscc_info_MsgDBLoginOut_ServerInternalProto_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_MsgDBLoginOut_default_instance_;
+    new (ptr) ::MsgDBLoginOut();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MsgDBLoginOut_ServerInternalProto_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MsgDBLoginOut_ServerInternalProto_2eproto}, {}};
+
 static void InitDefaultsscc_info_MsgDBRegisterLogin_ServerInternalProto_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -101,7 +118,7 @@ static void InitDefaultsscc_info_MsgRegisterServer_ServerInternalProto_2eproto()
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MsgRegisterServer_ServerInternalProto_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MsgRegisterServer_ServerInternalProto_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ServerInternalProto_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ServerInternalProto_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_ServerInternalProto_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_ServerInternalProto_2eproto = nullptr;
 
@@ -140,19 +157,29 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ServerInternalProto_2eproto::o
   PROTOBUF_FIELD_OFFSET(::MsgPlayerAttribute, phone_),
   PROTOBUF_FIELD_OFFSET(::MsgPlayerAttribute, coin_),
   PROTOBUF_FIELD_OFFSET(::MsgPlayerAttribute, bank_coin_),
+  PROTOBUF_FIELD_OFFSET(::MsgPlayerAttribute, head_id_),
+  PROTOBUF_FIELD_OFFSET(::MsgPlayerAttribute, nickname_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::MsgPlayerInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::MsgPlayerInfo, player_attribute_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::MsgDBLoginOut, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::MsgDBLoginOut, user_id_),
+  PROTOBUF_FIELD_OFFSET(::MsgDBLoginOut, online_time_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::MsgRegisterServer)},
   { 8, -1, sizeof(::MsgDBUpdateOnlineNum)},
   { 16, -1, sizeof(::MsgDBRegisterLogin)},
   { 23, -1, sizeof(::MsgPlayerAttribute)},
-  { 34, -1, sizeof(::MsgPlayerInfo)},
+  { 36, -1, sizeof(::MsgPlayerInfo)},
+  { 42, -1, sizeof(::MsgDBLoginOut)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -161,6 +188,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_MsgDBRegisterLogin_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_MsgPlayerAttribute_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_MsgPlayerInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_MsgDBLoginOut_default_instance_),
 };
 
 const char descriptor_table_protodef_ServerInternalProto_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -169,16 +197,19 @@ const char descriptor_table_protodef_ServerInternalProto_2eproto[] PROTOBUF_SECT
   "rver_id\030\003 \001(\005\"K\n\024MsgDBUpdateOnlineNum\022\021\n"
   "\tserver_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005\022\022\n\nonline"
   "_num\030\003 \001(\005\"5\n\022MsgDBRegisterLogin\022\021\n\tserv"
-  "er_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005\"~\n\022MsgPlayerAt"
-  "tribute\022\017\n\007user_id\030\001 \001(\005\022\024\n\014beautiful_id"
-  "\030\002 \001(\005\022\021\n\tuser_type\030\003 \001(\005\022\r\n\005phone\030\004 \001(\t"
-  "\022\014\n\004coin\030\005 \001(\003\022\021\n\tbank_coin\030\006 \001(\003\">\n\rMsg"
-  "PlayerInfo\022-\n\020player_attribute\030\001 \001(\0132\023.M"
-  "sgPlayerAttributeb\006proto3"
+  "er_id\030\001 \001(\005\022\014\n\004port\030\002 \001(\005\"\241\001\n\022MsgPlayerA"
+  "ttribute\022\017\n\007user_id\030\001 \001(\005\022\024\n\014beautiful_i"
+  "d\030\002 \001(\005\022\021\n\tuser_type\030\003 \001(\005\022\r\n\005phone\030\004 \001("
+  "\t\022\014\n\004coin\030\005 \001(\003\022\021\n\tbank_coin\030\006 \001(\003\022\017\n\007he"
+  "ad_id\030\007 \001(\005\022\020\n\010nickname\030\010 \001(\t\">\n\rMsgPlay"
+  "erInfo\022-\n\020player_attribute\030\001 \001(\0132\023.MsgPl"
+  "ayerAttribute\"5\n\rMsgDBLoginOut\022\017\n\007user_i"
+  "d\030\001 \001(\005\022\023\n\013online_time\030\002 \001(\005b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ServerInternalProto_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ServerInternalProto_2eproto_sccs[5] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ServerInternalProto_2eproto_sccs[6] = {
+  &scc_info_MsgDBLoginOut_ServerInternalProto_2eproto.base,
   &scc_info_MsgDBRegisterLogin_ServerInternalProto_2eproto.base,
   &scc_info_MsgDBUpdateOnlineNum_ServerInternalProto_2eproto.base,
   &scc_info_MsgPlayerAttribute_ServerInternalProto_2eproto.base,
@@ -187,10 +218,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Ser
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ServerInternalProto_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ServerInternalProto_2eproto = {
-  false, false, descriptor_table_protodef_ServerInternalProto_2eproto, "ServerInternalProto.proto", 425,
-  &descriptor_table_ServerInternalProto_2eproto_once, descriptor_table_ServerInternalProto_2eproto_sccs, descriptor_table_ServerInternalProto_2eproto_deps, 5, 0,
+  false, false, descriptor_table_protodef_ServerInternalProto_2eproto, "ServerInternalProto.proto", 516,
+  &descriptor_table_ServerInternalProto_2eproto_once, descriptor_table_ServerInternalProto_2eproto_sccs, descriptor_table_ServerInternalProto_2eproto_deps, 6, 0,
   schemas, file_default_instances, TableStruct_ServerInternalProto_2eproto::offsets,
-  file_level_metadata_ServerInternalProto_2eproto, 5, file_level_enum_descriptors_ServerInternalProto_2eproto, file_level_service_descriptors_ServerInternalProto_2eproto,
+  file_level_metadata_ServerInternalProto_2eproto, 6, file_level_enum_descriptors_ServerInternalProto_2eproto, file_level_service_descriptors_ServerInternalProto_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -949,19 +980,25 @@ MsgPlayerAttribute::MsgPlayerAttribute(const MsgPlayerAttribute& from)
     phone_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone(), 
       GetArena());
   }
+  nickname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_nickname().empty()) {
+    nickname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nickname(), 
+      GetArena());
+  }
   ::memcpy(&user_id_, &from.user_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&user_type_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(user_type_));
+    static_cast<size_t>(reinterpret_cast<char*>(&bank_coin_) -
+    reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
   // @@protoc_insertion_point(copy_constructor:MsgPlayerAttribute)
 }
 
 void MsgPlayerAttribute::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MsgPlayerAttribute_ServerInternalProto_2eproto.base);
   phone_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  nickname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&user_id_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&user_type_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(user_type_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&bank_coin_) -
+      reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
 }
 
 MsgPlayerAttribute::~MsgPlayerAttribute() {
@@ -973,6 +1010,7 @@ MsgPlayerAttribute::~MsgPlayerAttribute() {
 void MsgPlayerAttribute::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   phone_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  nickname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void MsgPlayerAttribute::ArenaDtor(void* object) {
@@ -997,9 +1035,10 @@ void MsgPlayerAttribute::Clear() {
   (void) cached_has_bits;
 
   phone_.ClearToEmpty();
+  nickname_.ClearToEmpty();
   ::memset(&user_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&user_type_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(user_type_));
+      reinterpret_cast<char*>(&bank_coin_) -
+      reinterpret_cast<char*>(&user_id_)) + sizeof(bank_coin_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1051,6 +1090,22 @@ const char* MsgPlayerAttribute::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           bank_coin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 head_id = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          head_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string nickname = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_nickname();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "MsgPlayerAttribute.nickname"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1122,6 +1177,22 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_bank_coin(), target);
   }
 
+  // int32 head_id = 7;
+  if (this->head_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_head_id(), target);
+  }
+
+  // string nickname = 8;
+  if (this->nickname().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nickname().data(), static_cast<int>(this->_internal_nickname().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MsgPlayerAttribute.nickname");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_nickname(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1145,6 +1216,13 @@ size_t MsgPlayerAttribute::ByteSizeLong() const {
         this->_internal_phone());
   }
 
+  // string nickname = 8;
+  if (this->nickname().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_nickname());
+  }
+
   // int32 user_id = 1;
   if (this->user_id() != 0) {
     total_size += 1 +
@@ -1166,18 +1244,25 @@ size_t MsgPlayerAttribute::ByteSizeLong() const {
         this->_internal_coin());
   }
 
-  // int64 bank_coin = 6;
-  if (this->bank_coin() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_bank_coin());
-  }
-
   // int32 user_type = 3;
   if (this->user_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_user_type());
+  }
+
+  // int32 head_id = 7;
+  if (this->head_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_head_id());
+  }
+
+  // int64 bank_coin = 6;
+  if (this->bank_coin() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_bank_coin());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1214,6 +1299,9 @@ void MsgPlayerAttribute::MergeFrom(const MsgPlayerAttribute& from) {
   if (from.phone().size() > 0) {
     _internal_set_phone(from._internal_phone());
   }
+  if (from.nickname().size() > 0) {
+    _internal_set_nickname(from._internal_nickname());
+  }
   if (from.user_id() != 0) {
     _internal_set_user_id(from._internal_user_id());
   }
@@ -1223,11 +1311,14 @@ void MsgPlayerAttribute::MergeFrom(const MsgPlayerAttribute& from) {
   if (from.coin() != 0) {
     _internal_set_coin(from._internal_coin());
   }
-  if (from.bank_coin() != 0) {
-    _internal_set_bank_coin(from._internal_bank_coin());
-  }
   if (from.user_type() != 0) {
     _internal_set_user_type(from._internal_user_type());
+  }
+  if (from.head_id() != 0) {
+    _internal_set_head_id(from._internal_head_id());
+  }
+  if (from.bank_coin() != 0) {
+    _internal_set_bank_coin(from._internal_bank_coin());
   }
 }
 
@@ -1253,9 +1344,10 @@ void MsgPlayerAttribute::InternalSwap(MsgPlayerAttribute* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   phone_.Swap(&other->phone_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  nickname_.Swap(&other->nickname_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MsgPlayerAttribute, user_type_)
-      + sizeof(MsgPlayerAttribute::user_type_)
+      PROTOBUF_FIELD_OFFSET(MsgPlayerAttribute, bank_coin_)
+      + sizeof(MsgPlayerAttribute::bank_coin_)
       - PROTOBUF_FIELD_OFFSET(MsgPlayerAttribute, user_id_)>(
           reinterpret_cast<char*>(&user_id_),
           reinterpret_cast<char*>(&other->user_id_));
@@ -1476,6 +1568,235 @@ void MsgPlayerInfo::InternalSwap(MsgPlayerInfo* other) {
 }
 
 
+// ===================================================================
+
+class MsgDBLoginOut::_Internal {
+ public:
+};
+
+MsgDBLoginOut::MsgDBLoginOut(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:MsgDBLoginOut)
+}
+MsgDBLoginOut::MsgDBLoginOut(const MsgDBLoginOut& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&user_id_, &from.user_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&online_time_) -
+    reinterpret_cast<char*>(&user_id_)) + sizeof(online_time_));
+  // @@protoc_insertion_point(copy_constructor:MsgDBLoginOut)
+}
+
+void MsgDBLoginOut::SharedCtor() {
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&user_id_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&online_time_) -
+      reinterpret_cast<char*>(&user_id_)) + sizeof(online_time_));
+}
+
+MsgDBLoginOut::~MsgDBLoginOut() {
+  // @@protoc_insertion_point(destructor:MsgDBLoginOut)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void MsgDBLoginOut::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void MsgDBLoginOut::ArenaDtor(void* object) {
+  MsgDBLoginOut* _this = reinterpret_cast< MsgDBLoginOut* >(object);
+  (void)_this;
+}
+void MsgDBLoginOut::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void MsgDBLoginOut::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const MsgDBLoginOut& MsgDBLoginOut::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MsgDBLoginOut_ServerInternalProto_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void MsgDBLoginOut::Clear() {
+// @@protoc_insertion_point(message_clear_start:MsgDBLoginOut)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&user_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&online_time_) -
+      reinterpret_cast<char*>(&user_id_)) + sizeof(online_time_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MsgDBLoginOut::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          user_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 online_time = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          online_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* MsgDBLoginOut::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MsgDBLoginOut)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 user_id = 1;
+  if (this->user_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_user_id(), target);
+  }
+
+  // int32 online_time = 2;
+  if (this->online_time() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_online_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MsgDBLoginOut)
+  return target;
+}
+
+size_t MsgDBLoginOut::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:MsgDBLoginOut)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 user_id = 1;
+  if (this->user_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_user_id());
+  }
+
+  // int32 online_time = 2;
+  if (this->online_time() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_online_time());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MsgDBLoginOut::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:MsgDBLoginOut)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MsgDBLoginOut* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MsgDBLoginOut>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:MsgDBLoginOut)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:MsgDBLoginOut)
+    MergeFrom(*source);
+  }
+}
+
+void MsgDBLoginOut::MergeFrom(const MsgDBLoginOut& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:MsgDBLoginOut)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.user_id() != 0) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from.online_time() != 0) {
+    _internal_set_online_time(from._internal_online_time());
+  }
+}
+
+void MsgDBLoginOut::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:MsgDBLoginOut)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MsgDBLoginOut::CopyFrom(const MsgDBLoginOut& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:MsgDBLoginOut)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MsgDBLoginOut::IsInitialized() const {
+  return true;
+}
+
+void MsgDBLoginOut::InternalSwap(MsgDBLoginOut* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MsgDBLoginOut, online_time_)
+      + sizeof(MsgDBLoginOut::online_time_)
+      - PROTOBUF_FIELD_OFFSET(MsgDBLoginOut, user_id_)>(
+          reinterpret_cast<char*>(&user_id_),
+          reinterpret_cast<char*>(&other->user_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MsgDBLoginOut::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::MsgRegisterServer* Arena::CreateMaybeMessage< ::MsgRegisterServer >(Arena* arena) {
@@ -1492,6 +1813,9 @@ template<> PROTOBUF_NOINLINE ::MsgPlayerAttribute* Arena::CreateMaybeMessage< ::
 }
 template<> PROTOBUF_NOINLINE ::MsgPlayerInfo* Arena::CreateMaybeMessage< ::MsgPlayerInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::MsgPlayerInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::MsgDBLoginOut* Arena::CreateMaybeMessage< ::MsgDBLoginOut >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::MsgDBLoginOut >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

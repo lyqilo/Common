@@ -31,10 +31,18 @@ message MsgPlayerAttribute
 	string	phone				= 4;		//电话
 	int64	coin				= 5;		//金币
 	int64	bank_coin			= 6;		//银行金币
+	int32	head_id				= 7;		//头像ID
+	string	nickname			= 8;		//昵称
 }
 
 //玩家信息
 message MsgPlayerInfo
 {
 	MsgPlayerAttribute	player_attribute		= 1;	//玩家属性
+}
+
+message MsgDBLoginOut
+{
+	int32	user_id				= 1;		//玩家ID
+	int32	online_time			= 2;		//在线时长
 }
