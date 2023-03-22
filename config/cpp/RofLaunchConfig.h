@@ -13,6 +13,7 @@ std::string LobbyPackageName;
 std::string GamePackageName;
 std::string ScriptResName;
 std::string LaunchResName;
+std::string VideoName;
 void ReadBody(char aBuffer[],int& aOffset)
 {
 bool bIsLittleEndian = IsLittleEndian();
@@ -43,6 +44,9 @@ ScriptResName = ToString(aBuffer, aOffset, nScriptResNameLen); aOffset += nScrip
 if (bIsLittleEndian) Reverse(aBuffer, aOffset, 4);
 int nLaunchResNameLen = ToInt32(aBuffer, aOffset); aOffset += 4;
 LaunchResName = ToString(aBuffer, aOffset, nLaunchResNameLen); aOffset += nLaunchResNameLen;
+if (bIsLittleEndian) Reverse(aBuffer, aOffset, 4);
+int nVideoNameLen = ToInt32(aBuffer, aOffset); aOffset += 4;
+VideoName = ToString(aBuffer, aOffset, nVideoNameLen); aOffset += nVideoNameLen;
 }
 };
 struct sRofLaunchConfigTable

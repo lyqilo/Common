@@ -15,6 +15,7 @@ public string LobbyPackageName { get; private set; }
 public string GamePackageName { get; private set; }
 public string ScriptResName { get; private set; }
 public string LaunchResName { get; private set; }
+public string VideoName { get; private set; }
 public int ReadBody(byte[] rData, int nOffset)
 {
 if (BitConverter.IsLittleEndian){Array.Reverse(rData, nOffset, 4);}
@@ -48,6 +49,9 @@ this.ScriptResName = Encoding.UTF8.GetString(rData, nOffset, nScriptResNameLen);
 if (BitConverter.IsLittleEndian){Array.Reverse(rData, nOffset, 4);}
 int nLaunchResNameLen = (int)BitConverter.ToUInt32(rData, nOffset); nOffset += 4;
 this.LaunchResName = Encoding.UTF8.GetString(rData, nOffset, nLaunchResNameLen); nOffset += nLaunchResNameLen;
+if (BitConverter.IsLittleEndian){Array.Reverse(rData, nOffset, 4);}
+int nVideoNameLen = (int)BitConverter.ToUInt32(rData, nOffset); nOffset += 4;
+this.VideoName = Encoding.UTF8.GetString(rData, nOffset, nVideoNameLen); nOffset += nVideoNameLen;
 return nOffset;
 }
 }
