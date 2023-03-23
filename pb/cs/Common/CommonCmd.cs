@@ -24,9 +24,15 @@ public static partial class CommonCmdReflection {
         string.Concat(
           "ChxQcm90by9Db21tb24vQ29tbW9uQ21kLnByb3RvKjoKCkVNc2dJRE1haW4S",
           "EwoPRU1zZ0lETWFpbl9OdWxsEAASFwoTRU1zZ0lETWFpbl9VU0VSSU5GTxAB",
-          "KlIKC0VNc2dJRExvZ2luEhMKD01zZ0lETG9naW5fTnVsbBAAEhQKEE1zZ0lE",
-          "TG9naW5fTG9naW4QARIYChRNc2dJRExvZ2luX0xvZ2luUmVzcBACKiAKCkVN",
-          "c2dJREdhbWUSEgoOTXNnSURHYW1lX051bGwQAGIGcHJvdG8z"));
+          "KsgCCgtFTXNnSURMb2dpbhITCg9Nc2dJRExvZ2luX051bGwQABIUChBNc2dJ",
+          "RExvZ2luX0xvZ2luEAESGAoUTXNnSURMb2dpbl9Mb2dpblJlc3AQAhIdChlN",
+          "c2dJRExvZ2luX01vZGlmeU5pY2tOYW1lEAMSIQodTXNnSURMb2dpbl9Nb2Rp",
+          "ZnlOaWNrTmFtZVJlc3AQBBIZChVNc2dJRExvZ2luX01vZGlmeUhlYWQQBRId",
+          "ChlNc2dJRExvZ2luX01vZGlmeUhlYWRSZXNwEAYSHQoZTXNnSURMb2dpbl9N",
+          "b2RpZnlQYXNzd29yZBAHEiEKHU1zZ0lETG9naW5fTW9kaWZ5UGFzc3dvcmRS",
+          "ZXNwEAgSGAoUTXNnSURMb2dpbl9CaW5kUGhvbmUQCRIcChhNc2dJRExvZ2lu",
+          "X0JpbmRQaG9uZVJlc3AQCiogCgpFTXNnSURHYW1lEhIKDk1zZ0lER2FtZV9O",
+          "dWxsEABiBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDMain), typeof(global::EMsgIDLogin), typeof(global::EMsgIDGame), }, null, null));
@@ -53,6 +59,38 @@ public enum EMsgIDLogin {
   ///玩家登录返回
   /// </summary>
   [pbr::OriginalName("MsgIDLogin_LoginResp")] MsgIdloginLoginResp = 2,
+  /// <summary>
+  ///修改玩家昵称
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyNickName")] MsgIdloginModifyNickName = 3,
+  /// <summary>
+  ///修改玩家昵称返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyNickNameResp")] MsgIdloginModifyNickNameResp = 4,
+  /// <summary>
+  ///修改玩家头像
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyHead")] MsgIdloginModifyHead = 5,
+  /// <summary>
+  ///修改玩家头像返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyHeadResp")] MsgIdloginModifyHeadResp = 6,
+  /// <summary>
+  ///修改玩家登录密码
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyPassword")] MsgIdloginModifyPassword = 7,
+  /// <summary>
+  ///修改玩家登录密码返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyPasswordResp")] MsgIdloginModifyPasswordResp = 8,
+  /// <summary>
+  ///绑定手机
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_BindPhone")] MsgIdloginBindPhone = 9,
+  /// <summary>
+  ///绑定手机返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_BindPhoneResp")] MsgIdloginBindPhoneResp = 10,
 }
 
 public enum EMsgIDGame {

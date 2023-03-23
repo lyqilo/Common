@@ -18,3 +18,15 @@ message MsgPlayerLoginResp
 	int32		head_id			= 8;	//头像id
 	string		phone_num		= 9;	//手机号
 }
+
+message MsgModifyPassword
+{
+	string		old_password	= 1;	//旧密码
+	string		new_password	= 2;	//新密码
+}
+
+message MsgBindPhone
+{
+	int32		code			= 1;	//验证码
+	string		phone_num		= 2;	//手机号码
+}

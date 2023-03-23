@@ -14,3 +14,8 @@ message MsgCommonN64
 {
 	int64	value			= 1;
 }
+
+message MsgCommonStr
+{
+	string	value			= 1;
+}

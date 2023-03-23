@@ -23,11 +23,17 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_CommonCmd_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017CommonCmd.proto*:\n\nEMsgIDMain\022\023\n\017EMsgI"
-  "DMain_Null\020\000\022\027\n\023EMsgIDMain_USERINFO\020\001*R\n"
-  "\013EMsgIDLogin\022\023\n\017MsgIDLogin_Null\020\000\022\024\n\020Msg"
-  "IDLogin_Login\020\001\022\030\n\024MsgIDLogin_LoginResp\020"
-  "\002* \n\nEMsgIDGame\022\022\n\016MsgIDGame_Null\020\000b\006pro"
-  "to3"
+  "DMain_Null\020\000\022\027\n\023EMsgIDMain_USERINFO\020\001*\310\002"
+  "\n\013EMsgIDLogin\022\023\n\017MsgIDLogin_Null\020\000\022\024\n\020Ms"
+  "gIDLogin_Login\020\001\022\030\n\024MsgIDLogin_LoginResp"
+  "\020\002\022\035\n\031MsgIDLogin_ModifyNickName\020\003\022!\n\035Msg"
+  "IDLogin_ModifyNickNameResp\020\004\022\031\n\025MsgIDLog"
+  "in_ModifyHead\020\005\022\035\n\031MsgIDLogin_ModifyHead"
+  "Resp\020\006\022\035\n\031MsgIDLogin_ModifyPassword\020\007\022!\n"
+  "\035MsgIDLogin_ModifyPasswordResp\020\010\022\030\n\024MsgI"
+  "DLogin_BindPhone\020\t\022\034\n\030MsgIDLogin_BindPho"
+  "neResp\020\n* \n\nEMsgIDGame\022\022\n\016MsgIDGame_Null"
+  "\020\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_CommonCmd_2eproto_deps[1] = {
 };
@@ -35,7 +41,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_CommonCmd_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_CommonCmd_2eproto = {
-  false, false, descriptor_table_protodef_CommonCmd_2eproto, "CommonCmd.proto", 203,
+  false, false, descriptor_table_protodef_CommonCmd_2eproto, "CommonCmd.proto", 450,
   &descriptor_table_CommonCmd_2eproto_once, descriptor_table_CommonCmd_2eproto_sccs, descriptor_table_CommonCmd_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_CommonCmd_2eproto::offsets,
   file_level_metadata_CommonCmd_2eproto, 0, file_level_enum_descriptors_CommonCmd_2eproto, file_level_service_descriptors_CommonCmd_2eproto,
@@ -66,6 +72,14 @@ bool EMsgIDLogin_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
       return true;
     default:
       return false;

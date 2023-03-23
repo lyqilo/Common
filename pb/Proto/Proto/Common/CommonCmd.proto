@@ -8,9 +8,17 @@ enum EMsgIDMain
 
 enum EMsgIDLogin
 {
-	MsgIDLogin_Null				= 0;
-	MsgIDLogin_Login			= 1;		//玩家登录
-	MsgIDLogin_LoginResp		= 2;		//玩家登录返回
+	MsgIDLogin_Null					= 0;
+	MsgIDLogin_Login				= 1;		//玩家登录
+	MsgIDLogin_LoginResp			= 2;		//玩家登录返回
+	MsgIDLogin_ModifyNickName		= 3;		//修改玩家昵称
+	MsgIDLogin_ModifyNickNameResp	= 4;		//修改玩家昵称返回
+	MsgIDLogin_ModifyHead			= 5;		//修改玩家头像
+	MsgIDLogin_ModifyHeadResp		= 6;		//修改玩家头像返回
+	MsgIDLogin_ModifyPassword		= 7;		//修改玩家登录密码
+	MsgIDLogin_ModifyPasswordResp	= 8;		//修改玩家登录密码返回
+	MsgIDLogin_BindPhone			= 9;		//绑定手机
+	MsgIDLogin_BindPhoneResp		= 10;		//绑定手机返回
 }
 
 enum EMsgIDGame

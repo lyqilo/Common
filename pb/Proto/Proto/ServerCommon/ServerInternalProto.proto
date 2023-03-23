@@ -46,3 +46,14 @@ message MsgDBLoginOut
 	int32	user_id				= 1;		//玩家ID
 	int32	online_time			= 2;		//在线时长
 }
+
+message MsgDBUpdatePlayerInfo
+{
+	int32	user_id				= 1;		//userid
+	int32	beautiful_id		= 2;		//靓号
+	int32	user_type			= 3;		//玩家类型
+	string	phone				= 4;		//电话
+	int32	head_id				= 5;		//头像ID
+	string	nickname			= 6;		//昵称
+	string	password			= 7;		//密码
+}
