@@ -30,14 +30,18 @@ public static partial class LoginReflection {
           "KAUSEQoJcGhvbmVfbnVtGAkgASgJIj8KEU1zZ01vZGlmeVBhc3N3b3JkEhQK",
           "DG9sZF9wYXNzd29yZBgBIAEoCRIUCgxuZXdfcGFzc3dvcmQYAiABKAkiLwoM",
           "TXNnQmluZFBob25lEgwKBGNvZGUYASABKAUSEQoJcGhvbmVfbnVtGAIgASgJ",
-          "YgZwcm90bzM="));
+          "Ii8KEU1zZ01vZGlmeUJhbmtHb2xkEgwKBHR5cGUYASABKAUSDAoEZ29sZBgC",
+          "IAEoAyIxCgtNc2dTZW5kR29sZBIUCgxiZWF1dGlmdWxfaWQYASABKAUSDAoE",
+          "Z29sZBgCIAEoA2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MsgPlayerLogin), global::MsgPlayerLogin.Parser, new[]{ "Account" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MsgPlayerLoginResp), global::MsgPlayerLoginResp.Parser, new[]{ "ResCode", "UserId", "BeautifulId", "Nickname", "UserType", "Coin", "BankCoin", "HeadId", "PhoneNum" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MsgModifyPassword), global::MsgModifyPassword.Parser, new[]{ "OldPassword", "NewPassword" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::MsgBindPhone), global::MsgBindPhone.Parser, new[]{ "Code", "PhoneNum" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::MsgBindPhone), global::MsgBindPhone.Parser, new[]{ "Code", "PhoneNum" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MsgModifyBankGold), global::MsgModifyBankGold.Parser, new[]{ "Type", "Gold" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MsgSendGold), global::MsgSendGold.Parser, new[]{ "BeautifulId", "Gold" }, null, null, null, null)
         }));
   }
   #endregion
@@ -1125,6 +1129,434 @@ public sealed partial class MsgBindPhone : pb::IMessage<MsgBindPhone>
         }
         case 18: {
           PhoneNum = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class MsgModifyBankGold : pb::IMessage<MsgModifyBankGold>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<MsgModifyBankGold> _parser = new pb::MessageParser<MsgModifyBankGold>(() => new MsgModifyBankGold());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<MsgModifyBankGold> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::LoginReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgModifyBankGold() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgModifyBankGold(MsgModifyBankGold other) : this() {
+    type_ = other.type_;
+    gold_ = other.gold_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgModifyBankGold Clone() {
+    return new MsgModifyBankGold(this);
+  }
+
+  /// <summary>Field number for the "type" field.</summary>
+  public const int TypeFieldNumber = 1;
+  private int type_;
+  /// <summary>
+  ///操作银行(0:存 1:取)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Type {
+    get { return type_; }
+    set {
+      type_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "gold" field.</summary>
+  public const int GoldFieldNumber = 2;
+  private long gold_;
+  /// <summary>
+  ///操作金币数量
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public long Gold {
+    get { return gold_; }
+    set {
+      gold_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as MsgModifyBankGold);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(MsgModifyBankGold other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Type != other.Type) return false;
+    if (Gold != other.Gold) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Type != 0) hash ^= Type.GetHashCode();
+    if (Gold != 0L) hash ^= Gold.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (Type != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Type);
+    }
+    if (Gold != 0L) {
+      output.WriteRawTag(16);
+      output.WriteInt64(Gold);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (Type != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Type);
+    }
+    if (Gold != 0L) {
+      output.WriteRawTag(16);
+      output.WriteInt64(Gold);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Type != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+    }
+    if (Gold != 0L) {
+      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Gold);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(MsgModifyBankGold other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Type != 0) {
+      Type = other.Type;
+    }
+    if (other.Gold != 0L) {
+      Gold = other.Gold;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Type = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Gold = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          Type = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Gold = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  }
+  #endif
+
+}
+
+public sealed partial class MsgSendGold : pb::IMessage<MsgSendGold>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
+  private static readonly pb::MessageParser<MsgSendGold> _parser = new pb::MessageParser<MsgSendGold>(() => new MsgSendGold());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<MsgSendGold> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::LoginReflection.Descriptor.MessageTypes[5]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgSendGold() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgSendGold(MsgSendGold other) : this() {
+    beautifulId_ = other.beautifulId_;
+    gold_ = other.gold_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MsgSendGold Clone() {
+    return new MsgSendGold(this);
+  }
+
+  /// <summary>Field number for the "beautiful_id" field.</summary>
+  public const int BeautifulIdFieldNumber = 1;
+  private int beautifulId_;
+  /// <summary>
+  ///靓号
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int BeautifulId {
+    get { return beautifulId_; }
+    set {
+      beautifulId_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "gold" field.</summary>
+  public const int GoldFieldNumber = 2;
+  private long gold_;
+  /// <summary>
+  ///赠送金币
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public long Gold {
+    get { return gold_; }
+    set {
+      gold_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as MsgSendGold);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(MsgSendGold other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (BeautifulId != other.BeautifulId) return false;
+    if (Gold != other.Gold) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (BeautifulId != 0) hash ^= BeautifulId.GetHashCode();
+    if (Gold != 0L) hash ^= Gold.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (BeautifulId != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(BeautifulId);
+    }
+    if (Gold != 0L) {
+      output.WriteRawTag(16);
+      output.WriteInt64(Gold);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (BeautifulId != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(BeautifulId);
+    }
+    if (Gold != 0L) {
+      output.WriteRawTag(16);
+      output.WriteInt64(Gold);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (BeautifulId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(BeautifulId);
+    }
+    if (Gold != 0L) {
+      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Gold);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(MsgSendGold other) {
+    if (other == null) {
+      return;
+    }
+    if (other.BeautifulId != 0) {
+      BeautifulId = other.BeautifulId;
+    }
+    if (other.Gold != 0L) {
+      Gold = other.Gold;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          BeautifulId = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Gold = input.ReadInt64();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 8: {
+          BeautifulId = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Gold = input.ReadInt64();
           break;
         }
       }

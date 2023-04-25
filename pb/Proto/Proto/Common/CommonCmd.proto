@@ -2,26 +2,51 @@ syntax = "proto3";
 
 enum EMsgIDMain
 {
-	EMsgIDMain_Null			= 0;
-	EMsgIDMain_USERINFO		= 1;	//玩家信息
+	EMsgIDMain_Null					= 0;
+	EMsgIDMain_Login_UserInfo		= 1001;	//玩家信息
+	EMsgIDMain_Game					= 2001;	//游戏服务器
+}
+
+enum EResCode
+{
+	EResCode_NULL					= 0;
+	EResCode_InvilidMail			= 1;		//无效邮件
+	EResCode_MailRecalled			= 2;		//邮件已被撤回
+	EResCode_MailPicked				= 3;		//邮件已被领取
 }
 
 enum EMsgIDLogin
 {
-	MsgIDLogin_Null					= 0;
-	MsgIDLogin_Login				= 1;		//玩家登录
-	MsgIDLogin_LoginResp			= 2;		//玩家登录返回
-	MsgIDLogin_ModifyNickName		= 3;		//修改玩家昵称
-	MsgIDLogin_ModifyNickNameResp	= 4;		//修改玩家昵称返回
-	MsgIDLogin_ModifyHead			= 5;		//修改玩家头像
-	MsgIDLogin_ModifyHeadResp		= 6;		//修改玩家头像返回
-	MsgIDLogin_ModifyPassword		= 7;		//修改玩家登录密码
-	MsgIDLogin_ModifyPasswordResp	= 8;		//修改玩家登录密码返回
-	MsgIDLogin_BindPhone			= 9;		//绑定手机
-	MsgIDLogin_BindPhoneResp		= 10;		//绑定手机返回
+	MsgIDLogin_Null						= 0;
+	MsgIDLogin_Login					= 1;		//玩家登录
+	MsgIDLogin_LoginResp				= 2;		//玩家登录返回
+	MsgIDLogin_ModifyNickName			= 3;		//修改玩家昵称
+	MsgIDLogin_ModifyNickNameResp		= 4;		//修改玩家昵称返回
+	MsgIDLogin_ModifyHead				= 5;		//修改玩家头像
+	MsgIDLogin_ModifyHeadResp			= 6;		//修改玩家头像返回
+	MsgIDLogin_ModifyPassword			= 7;		//修改玩家登录密码
+	MsgIDLogin_ModifyPasswordResp		= 8;		//修改玩家登录密码返回
+	MsgIDLogin_BindPhone				= 9;		//绑定手机
+	MsgIDLogin_BindPhoneResp			= 10;		//绑定手机返回
+	MsgIDLogin_ReadMail					= 11;		//读取邮件
+	MsgIDLogin_PickMail					= 12;		//领取邮件
+	MsgIDLogin_PickMailResp				= 13;		//领取邮件返回
+	MsgIDLogin_RecallMail				= 14;		//撤回邮件
+	MsgIDLogin_RecallMailResp			= 15;		//撤回邮件返回(0:成功 非0:查看返回码)
+	MsgIDLogin_DeleteAllReadMail		= 16;		//删除已读邮件
+	MsgIDLogin_DeleteAllReadMailResp	= 17;		//删除已读邮件返回
+	MsgIDLogin_SyncPlayerGold			= 18;		//同步玩家金币
+	MsgIDLogin_SyncPlayerBankGold		= 19;		//同步玩家银行金币
+	MsgIDLogin_ModifyBankGold			= 20;		//操作银行金币
+	MsgIDLogin_ModifyBankGoldResp		= 21;		//操作银行金币返回
+	MsgIDLogin_SendGold					= 22;		//赠送金币
+	MsgIDLogin_SendGoldResp				= 23;		//赠送金币返回
 }
 
 enum EMsgIDGame
 {
 	MsgIDGame_Null				= 0;
+	//ID从1001开始
+	MsgIDGame_Login				= 1001;				//玩家登录
+	MsgIDGame_LoginResp			= 1002;				//玩家登录返回
 }

@@ -57,13 +57,17 @@ PROTOBUF_NAMESPACE_CLOSE
 
 enum EMsgIDServerMain : int {
   MsgIDServerMain_Null = 0,
-  LOGIN_TO_CENTER_SERVER_MANAGER = 1,
+  LOGIN2CENTER_MANAGER = 1,
+  GAME2CENTER_MANAGER = 2,
+  CENTER2LOGIN_NOTIFY = 3,
+  CENTER2GAME_NOTIFY = 4,
+  ROBOT2GAME_MAIN = 5,
   EMsgIDServerMain_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EMsgIDServerMain_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EMsgIDServerMain_IsValid(int value);
 constexpr EMsgIDServerMain EMsgIDServerMain_MIN = MsgIDServerMain_Null;
-constexpr EMsgIDServerMain EMsgIDServerMain_MAX = LOGIN_TO_CENTER_SERVER_MANAGER;
+constexpr EMsgIDServerMain EMsgIDServerMain_MAX = ROBOT2GAME_MAIN;
 constexpr int EMsgIDServerMain_ARRAYSIZE = EMsgIDServerMain_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDServerMain_descriptor();
@@ -82,14 +86,20 @@ inline bool EMsgIDServerMain_Parse(
 }
 enum EMsgIDServerInternalProto : int {
   SERVER_INTERNAL_NULL = 0,
-  LOGIN2CENTER_REGISTER = 1,
-  LOGIN2CENTER_UPDATE_ONLINE_NUM = 2,
+  LOGIN2CENTER_Register = 1,
+  LOGIN2CENTER_UpdateOnlineNum = 2,
+  LOGIN2CENTER_SendGold = 3,
+  CENTER2LOGIN_SendGoldResp = 4,
+  GAME2CENTER_Register = 2001,
+  GAME2CENTER_ApplyRobot = 2002,
+  CENTER2GAME_ApplyRobotResp = 2003,
+  ROBOT2GAME_RobotLogin = 3001,
   EMsgIDServerInternalProto_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EMsgIDServerInternalProto_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EMsgIDServerInternalProto_IsValid(int value);
 constexpr EMsgIDServerInternalProto EMsgIDServerInternalProto_MIN = SERVER_INTERNAL_NULL;
-constexpr EMsgIDServerInternalProto EMsgIDServerInternalProto_MAX = LOGIN2CENTER_UPDATE_ONLINE_NUM;
+constexpr EMsgIDServerInternalProto EMsgIDServerInternalProto_MAX = ROBOT2GAME_RobotLogin;
 constexpr int EMsgIDServerInternalProto_ARRAYSIZE = EMsgIDServerInternalProto_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDServerInternalProto_descriptor();
@@ -108,21 +118,42 @@ inline bool EMsgIDServerInternalProto_Parse(
 }
 enum EMsgIDDB : int {
   MsgIDDB_NULL = 0,
-  CENTER_SERVER2DB_UPDATE_ONLINE_NUM = 1,
-  CENTER_SERVER2DB_INIT_ONLINE_NUM = 2,
-  CENTER_SERVER2DB_REGISTER_LOGIN = 3,
-  CENTER_SERVER2DB_UNREGISTER_LOGIN = 4,
-  LOGIN_SERVER2DB_LOGIN = 1001,
-  DB2LOGIN_SERVER_LOGIN = 1002,
-  DB2LOGIN_LOAD_PLAYER_DATA = 1003,
-  LOGIN_SERVER2DB_LOGIN_OUT = 1004,
-  LOGIN_SERVER2DB_UPDATE_PLAYER_INFO = 1005,
+  CENTER2DB_UpdateOnlineNum = 1,
+  CENTER2DB_InitOnlineNum = 2,
+  CENTER2DB_RegisterLogin = 3,
+  CENTER2DB_UnregisterLogin = 4,
+  CENTER2DB_RegisterGame = 5,
+  CENTER2DB_LoadAllRobot = 6,
+  DB2CENTER_LoadAllRobotResp = 7,
+  CENTER2DB_CreateRobot = 8,
+  DB2CENTER_CreateRobotResp = 9,
+  LOGIN2DB_Login = 1001,
+  DB2LOGIN_LoginResp = 1002,
+  DB2LOGIN_LoadPlayerData = 1003,
+  LOGIN2DB_LoginOut = 1004,
+  LOGIN2DB_UpdatePlayerInfo = 1005,
+  LOGIN2DB_ReadMail = 1006,
+  LOGIN2DB_PickMail = 1007,
+  DB2LOGIN_PickMailResp = 1008,
+  LOGIN2DB_RecallMail = 1009,
+  DB2LOGIN_RecallMailResp = 1010,
+  LOGIN2DB_DeleteAllReadMail = 1011,
+  DB2LOGIN_DeleteAllReadMailResp = 1012,
+  LOGIN2DB_BankModifyGold = 1013,
+  DB2LOGIN_BankModifyGoldResp = 1014,
+  LOGIN2DB_SendGold = 1015,
+  DB2LOGIN_SendGoldResp = 1016,
+  GAME2DB_Login = 2001,
+  DB2GAME_LoginResp = 2002,
+  DB2GAME_LoadPlayerData = 2003,
+  GAME2DB_RobotLoginByUserID = 2004,
+  DB2GAME_RobotLoginByUserIDResp = 2005,
   EMsgIDDB_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EMsgIDDB_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EMsgIDDB_IsValid(int value);
 constexpr EMsgIDDB EMsgIDDB_MIN = MsgIDDB_NULL;
-constexpr EMsgIDDB EMsgIDDB_MAX = LOGIN_SERVER2DB_UPDATE_PLAYER_INFO;
+constexpr EMsgIDDB EMsgIDDB_MAX = DB2GAME_RobotLoginByUserIDResp;
 constexpr int EMsgIDDB_ARRAYSIZE = EMsgIDDB_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDDB_descriptor();

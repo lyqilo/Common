@@ -4,10 +4,10 @@
 
 struct sRofItemRow
 {
-int32_t ID;
-int32_t ItemName;
-int32_t Type;
-int32_t SubType;
+int ID;
+int ItemName;
+int Type;
+int SubType;
 std::string English;
 std::string Chinese;
 void ReadBody(char aBuffer[],int& aOffset)
@@ -32,9 +32,9 @@ Chinese = ToString(aBuffer, aOffset, nChineseLen); aOffset += nChineseLen;
 struct sRofItemTable
 {
 private:
-int32_t mRowNum;
-std::map<int32_t, sRofItemRow> mIDMap;
-std::map<int32_t, int32_t> mRowMap;
+int mRowNum;
+std::map<int, sRofItemRow> mIDMap;
+std::map<int, int> mRowMap;
 public:
 int GetRowNum(){ return mRowNum; }
 void Init(char aBuf[])
@@ -56,10 +56,10 @@ mRowMap[i] = nID;
 }
 sRofItemRow* GetDataByID(int aID)
 {
-std::map<int, sRofExampleRow>::iterator pIter = mIDMap.find(aID);
+std::map<int, sRofItemRow>::iterator pIter = mIDMap.find(aID);
 if (pIter == mIDMap.end())
 {
-return nullptr;
+return NULL;
 }
 return &pIter->second;
 }
@@ -68,7 +68,7 @@ sRofItemRow* GetDataByRow(int aIndex)
 std::map<int, int>::iterator pIter = mRowMap.find(aIndex);
 if (pIter == mRowMap.end())
 {
-return nullptr;
+return NULL;
 }
 int nID = mRowMap[aIndex];
 return &mIDMap[nID];

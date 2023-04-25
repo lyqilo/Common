@@ -22,20 +22,33 @@ public static partial class CommonCmdReflection {
   static CommonCmdReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChxQcm90by9Db21tb24vQ29tbW9uQ21kLnByb3RvKjoKCkVNc2dJRE1haW4S",
-          "EwoPRU1zZ0lETWFpbl9OdWxsEAASFwoTRU1zZ0lETWFpbl9VU0VSSU5GTxAB",
-          "KsgCCgtFTXNnSURMb2dpbhITCg9Nc2dJRExvZ2luX051bGwQABIUChBNc2dJ",
-          "RExvZ2luX0xvZ2luEAESGAoUTXNnSURMb2dpbl9Mb2dpblJlc3AQAhIdChlN",
-          "c2dJRExvZ2luX01vZGlmeU5pY2tOYW1lEAMSIQodTXNnSURMb2dpbl9Nb2Rp",
-          "ZnlOaWNrTmFtZVJlc3AQBBIZChVNc2dJRExvZ2luX01vZGlmeUhlYWQQBRId",
-          "ChlNc2dJRExvZ2luX01vZGlmeUhlYWRSZXNwEAYSHQoZTXNnSURMb2dpbl9N",
-          "b2RpZnlQYXNzd29yZBAHEiEKHU1zZ0lETG9naW5fTW9kaWZ5UGFzc3dvcmRS",
-          "ZXNwEAgSGAoUTXNnSURMb2dpbl9CaW5kUGhvbmUQCRIcChhNc2dJRExvZ2lu",
-          "X0JpbmRQaG9uZVJlc3AQCiogCgpFTXNnSURHYW1lEhIKDk1zZ0lER2FtZV9O",
-          "dWxsEABiBnByb3RvMw=="));
+          "ChxQcm90by9Db21tb24vQ29tbW9uQ21kLnByb3RvKlcKCkVNc2dJRE1haW4S",
+          "EwoPRU1zZ0lETWFpbl9OdWxsEAASHgoZRU1zZ0lETWFpbl9Mb2dpbl9Vc2Vy",
+          "SW5mbxDpBxIUCg9FTXNnSURNYWluX0dhbWUQ0Q8qawoIRVJlc0NvZGUSEQoN",
+          "RVJlc0NvZGVfTlVMTBAAEhgKFEVSZXNDb2RlX0ludmlsaWRNYWlsEAESGQoV",
+          "RVJlc0NvZGVfTWFpbFJlY2FsbGVkEAISFwoTRVJlc0NvZGVfTWFpbFBpY2tl",
+          "ZBADKtMFCgtFTXNnSURMb2dpbhITCg9Nc2dJRExvZ2luX051bGwQABIUChBN",
+          "c2dJRExvZ2luX0xvZ2luEAESGAoUTXNnSURMb2dpbl9Mb2dpblJlc3AQAhId",
+          "ChlNc2dJRExvZ2luX01vZGlmeU5pY2tOYW1lEAMSIQodTXNnSURMb2dpbl9N",
+          "b2RpZnlOaWNrTmFtZVJlc3AQBBIZChVNc2dJRExvZ2luX01vZGlmeUhlYWQQ",
+          "BRIdChlNc2dJRExvZ2luX01vZGlmeUhlYWRSZXNwEAYSHQoZTXNnSURMb2dp",
+          "bl9Nb2RpZnlQYXNzd29yZBAHEiEKHU1zZ0lETG9naW5fTW9kaWZ5UGFzc3dv",
+          "cmRSZXNwEAgSGAoUTXNnSURMb2dpbl9CaW5kUGhvbmUQCRIcChhNc2dJRExv",
+          "Z2luX0JpbmRQaG9uZVJlc3AQChIXChNNc2dJRExvZ2luX1JlYWRNYWlsEAsS",
+          "FwoTTXNnSURMb2dpbl9QaWNrTWFpbBAMEhsKF01zZ0lETG9naW5fUGlja01h",
+          "aWxSZXNwEA0SGQoVTXNnSURMb2dpbl9SZWNhbGxNYWlsEA4SHQoZTXNnSURM",
+          "b2dpbl9SZWNhbGxNYWlsUmVzcBAPEiAKHE1zZ0lETG9naW5fRGVsZXRlQWxs",
+          "UmVhZE1haWwQEBIkCiBNc2dJRExvZ2luX0RlbGV0ZUFsbFJlYWRNYWlsUmVz",
+          "cBAREh0KGU1zZ0lETG9naW5fU3luY1BsYXllckdvbGQQEhIhCh1Nc2dJRExv",
+          "Z2luX1N5bmNQbGF5ZXJCYW5rR29sZBATEh0KGU1zZ0lETG9naW5fTW9kaWZ5",
+          "QmFua0dvbGQQFBIhCh1Nc2dJRExvZ2luX01vZGlmeUJhbmtHb2xkUmVzcBAV",
+          "EhcKE01zZ0lETG9naW5fU2VuZEdvbGQQFhIbChdNc2dJRExvZ2luX1NlbmRH",
+          "b2xkUmVzcBAXKlAKCkVNc2dJREdhbWUSEgoOTXNnSURHYW1lX051bGwQABIU",
+          "Cg9Nc2dJREdhbWVfTG9naW4Q6QcSGAoTTXNnSURHYW1lX0xvZ2luUmVzcBDq",
+          "B2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDMain), typeof(global::EMsgIDLogin), typeof(global::EMsgIDGame), }, null, null));
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EMsgIDMain), typeof(global::EResCode), typeof(global::EMsgIDLogin), typeof(global::EMsgIDGame), }, null, null));
   }
   #endregion
 
@@ -46,7 +59,27 @@ public enum EMsgIDMain {
   /// <summary>
   ///玩家信息
   /// </summary>
-  [pbr::OriginalName("EMsgIDMain_USERINFO")] Userinfo = 1,
+  [pbr::OriginalName("EMsgIDMain_Login_UserInfo")] LoginUserInfo = 1001,
+  /// <summary>
+  ///游戏服务器
+  /// </summary>
+  [pbr::OriginalName("EMsgIDMain_Game")] Game = 2001,
+}
+
+public enum EResCode {
+  [pbr::OriginalName("EResCode_NULL")] Null = 0,
+  /// <summary>
+  ///无效邮件
+  /// </summary>
+  [pbr::OriginalName("EResCode_InvilidMail")] InvilidMail = 1,
+  /// <summary>
+  ///邮件已被撤回
+  /// </summary>
+  [pbr::OriginalName("EResCode_MailRecalled")] MailRecalled = 2,
+  /// <summary>
+  ///邮件已被领取
+  /// </summary>
+  [pbr::OriginalName("EResCode_MailPicked")] MailPicked = 3,
 }
 
 public enum EMsgIDLogin {
@@ -91,10 +124,70 @@ public enum EMsgIDLogin {
   ///绑定手机返回
   /// </summary>
   [pbr::OriginalName("MsgIDLogin_BindPhoneResp")] MsgIdloginBindPhoneResp = 10,
+  /// <summary>
+  ///读取邮件
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ReadMail")] MsgIdloginReadMail = 11,
+  /// <summary>
+  ///领取邮件
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_PickMail")] MsgIdloginPickMail = 12,
+  /// <summary>
+  ///领取邮件返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_PickMailResp")] MsgIdloginPickMailResp = 13,
+  /// <summary>
+  ///撤回邮件
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_RecallMail")] MsgIdloginRecallMail = 14,
+  /// <summary>
+  ///撤回邮件返回(0:成功 非0:查看返回码)
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_RecallMailResp")] MsgIdloginRecallMailResp = 15,
+  /// <summary>
+  ///删除已读邮件
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_DeleteAllReadMail")] MsgIdloginDeleteAllReadMail = 16,
+  /// <summary>
+  ///删除已读邮件返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_DeleteAllReadMailResp")] MsgIdloginDeleteAllReadMailResp = 17,
+  /// <summary>
+  ///同步玩家金币
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_SyncPlayerGold")] MsgIdloginSyncPlayerGold = 18,
+  /// <summary>
+  ///同步玩家银行金币
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_SyncPlayerBankGold")] MsgIdloginSyncPlayerBankGold = 19,
+  /// <summary>
+  ///操作银行金币
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyBankGold")] MsgIdloginModifyBankGold = 20,
+  /// <summary>
+  ///操作银行金币返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_ModifyBankGoldResp")] MsgIdloginModifyBankGoldResp = 21,
+  /// <summary>
+  ///赠送金币
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_SendGold")] MsgIdloginSendGold = 22,
+  /// <summary>
+  ///赠送金币返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDLogin_SendGoldResp")] MsgIdloginSendGoldResp = 23,
 }
 
 public enum EMsgIDGame {
   [pbr::OriginalName("MsgIDGame_Null")] MsgIdgameNull = 0,
+  /// <summary>
+  ///ID从1001开始
+  /// </summary>
+  [pbr::OriginalName("MsgIDGame_Login")] MsgIdgameLogin = 1001,
+  /// <summary>
+  ///玩家登录返回
+  /// </summary>
+  [pbr::OriginalName("MsgIDGame_LoginResp")] MsgIdgameLoginResp = 1002,
 }
 
 #endregion

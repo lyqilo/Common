@@ -15,25 +15,39 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 static constexpr ::PROTOBUF_NAMESPACE_ID::Metadata* file_level_metadata_CommonCmd_2eproto = nullptr;
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_CommonCmd_2eproto[3];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_CommonCmd_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_CommonCmd_2eproto = nullptr;
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_CommonCmd_2eproto::offsets[1] = {};
 static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_CommonCmd_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017CommonCmd.proto*:\n\nEMsgIDMain\022\023\n\017EMsgI"
-  "DMain_Null\020\000\022\027\n\023EMsgIDMain_USERINFO\020\001*\310\002"
-  "\n\013EMsgIDLogin\022\023\n\017MsgIDLogin_Null\020\000\022\024\n\020Ms"
-  "gIDLogin_Login\020\001\022\030\n\024MsgIDLogin_LoginResp"
-  "\020\002\022\035\n\031MsgIDLogin_ModifyNickName\020\003\022!\n\035Msg"
-  "IDLogin_ModifyNickNameResp\020\004\022\031\n\025MsgIDLog"
-  "in_ModifyHead\020\005\022\035\n\031MsgIDLogin_ModifyHead"
-  "Resp\020\006\022\035\n\031MsgIDLogin_ModifyPassword\020\007\022!\n"
-  "\035MsgIDLogin_ModifyPasswordResp\020\010\022\030\n\024MsgI"
-  "DLogin_BindPhone\020\t\022\034\n\030MsgIDLogin_BindPho"
-  "neResp\020\n* \n\nEMsgIDGame\022\022\n\016MsgIDGame_Null"
-  "\020\000b\006proto3"
+  "\n\017CommonCmd.proto*W\n\nEMsgIDMain\022\023\n\017EMsgI"
+  "DMain_Null\020\000\022\036\n\031EMsgIDMain_Login_UserInf"
+  "o\020\351\007\022\024\n\017EMsgIDMain_Game\020\321\017*k\n\010EResCode\022\021"
+  "\n\rEResCode_NULL\020\000\022\030\n\024EResCode_InvilidMai"
+  "l\020\001\022\031\n\025EResCode_MailRecalled\020\002\022\027\n\023EResCo"
+  "de_MailPicked\020\003*\323\005\n\013EMsgIDLogin\022\023\n\017MsgID"
+  "Login_Null\020\000\022\024\n\020MsgIDLogin_Login\020\001\022\030\n\024Ms"
+  "gIDLogin_LoginResp\020\002\022\035\n\031MsgIDLogin_Modif"
+  "yNickName\020\003\022!\n\035MsgIDLogin_ModifyNickName"
+  "Resp\020\004\022\031\n\025MsgIDLogin_ModifyHead\020\005\022\035\n\031Msg"
+  "IDLogin_ModifyHeadResp\020\006\022\035\n\031MsgIDLogin_M"
+  "odifyPassword\020\007\022!\n\035MsgIDLogin_ModifyPass"
+  "wordResp\020\010\022\030\n\024MsgIDLogin_BindPhone\020\t\022\034\n\030"
+  "MsgIDLogin_BindPhoneResp\020\n\022\027\n\023MsgIDLogin"
+  "_ReadMail\020\013\022\027\n\023MsgIDLogin_PickMail\020\014\022\033\n\027"
+  "MsgIDLogin_PickMailResp\020\r\022\031\n\025MsgIDLogin_"
+  "RecallMail\020\016\022\035\n\031MsgIDLogin_RecallMailRes"
+  "p\020\017\022 \n\034MsgIDLogin_DeleteAllReadMail\020\020\022$\n"
+  " MsgIDLogin_DeleteAllReadMailResp\020\021\022\035\n\031M"
+  "sgIDLogin_SyncPlayerGold\020\022\022!\n\035MsgIDLogin"
+  "_SyncPlayerBankGold\020\023\022\035\n\031MsgIDLogin_Modi"
+  "fyBankGold\020\024\022!\n\035MsgIDLogin_ModifyBankGol"
+  "dResp\020\025\022\027\n\023MsgIDLogin_SendGold\020\026\022\033\n\027MsgI"
+  "DLogin_SendGoldResp\020\027*P\n\nEMsgIDGame\022\022\n\016M"
+  "sgIDGame_Null\020\000\022\024\n\017MsgIDGame_Login\020\351\007\022\030\n"
+  "\023MsgIDGame_LoginResp\020\352\007b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_CommonCmd_2eproto_deps[1] = {
 };
@@ -41,7 +55,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_CommonCmd_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_CommonCmd_2eproto = {
-  false, false, descriptor_table_protodef_CommonCmd_2eproto, "CommonCmd.proto", 450,
+  false, false, descriptor_table_protodef_CommonCmd_2eproto, "CommonCmd.proto", 1031,
   &descriptor_table_CommonCmd_2eproto_once, descriptor_table_CommonCmd_2eproto_sccs, descriptor_table_CommonCmd_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_CommonCmd_2eproto::offsets,
   file_level_metadata_CommonCmd_2eproto, 0, file_level_enum_descriptors_CommonCmd_2eproto, file_level_service_descriptors_CommonCmd_2eproto,
@@ -56,7 +70,24 @@ const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDMain_descriptor() {
 bool EMsgIDMain_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1001:
+    case 2001:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EResCode_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_CommonCmd_2eproto);
+  return file_level_enum_descriptors_CommonCmd_2eproto[1];
+}
+bool EResCode_IsValid(int value) {
+  switch (value) {
+    case 0:
     case 1:
+    case 2:
+    case 3:
       return true;
     default:
       return false;
@@ -65,7 +96,7 @@ bool EMsgIDMain_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDLogin_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_CommonCmd_2eproto);
-  return file_level_enum_descriptors_CommonCmd_2eproto[1];
+  return file_level_enum_descriptors_CommonCmd_2eproto[2];
 }
 bool EMsgIDLogin_IsValid(int value) {
   switch (value) {
@@ -80,6 +111,19 @@ bool EMsgIDLogin_IsValid(int value) {
     case 8:
     case 9:
     case 10:
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+    case 20:
+    case 21:
+    case 22:
+    case 23:
       return true;
     default:
       return false;
@@ -88,11 +132,13 @@ bool EMsgIDLogin_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMsgIDGame_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_CommonCmd_2eproto);
-  return file_level_enum_descriptors_CommonCmd_2eproto[2];
+  return file_level_enum_descriptors_CommonCmd_2eproto[3];
 }
 bool EMsgIDGame_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1001:
+    case 1002:
       return true;
     default:
       return false;

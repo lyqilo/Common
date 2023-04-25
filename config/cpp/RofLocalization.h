@@ -4,7 +4,7 @@
 
 struct sRofLocalizationRow
 {
-int32_t ID;
+int ID;
 std::string Type;
 std::string English;
 std::string Chinese;
@@ -27,9 +27,9 @@ Chinese = ToString(aBuffer, aOffset, nChineseLen); aOffset += nChineseLen;
 struct sRofLocalizationTable
 {
 private:
-int32_t mRowNum;
-std::map<int32_t, sRofLocalizationRow> mIDMap;
-std::map<int32_t, int32_t> mRowMap;
+int mRowNum;
+std::map<int, sRofLocalizationRow> mIDMap;
+std::map<int, int> mRowMap;
 public:
 int GetRowNum(){ return mRowNum; }
 void Init(char aBuf[])
@@ -51,10 +51,10 @@ mRowMap[i] = nID;
 }
 sRofLocalizationRow* GetDataByID(int aID)
 {
-std::map<int, sRofExampleRow>::iterator pIter = mIDMap.find(aID);
+std::map<int, sRofLocalizationRow>::iterator pIter = mIDMap.find(aID);
 if (pIter == mIDMap.end())
 {
-return nullptr;
+return NULL;
 }
 return &pIter->second;
 }
@@ -63,7 +63,7 @@ sRofLocalizationRow* GetDataByRow(int aIndex)
 std::map<int, int>::iterator pIter = mRowMap.find(aIndex);
 if (pIter == mRowMap.end())
 {
-return nullptr;
+return NULL;
 }
 int nID = mRowMap[aIndex];
 return &mIDMap[nID];

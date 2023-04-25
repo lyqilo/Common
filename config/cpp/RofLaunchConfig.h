@@ -4,7 +4,7 @@
 
 struct sRofLaunchConfigRow
 {
-int32_t ID;
+int ID;
 std::vector<std::string> DNS;
 std::string CdnDirectoryName;
 std::string Auth;
@@ -52,9 +52,9 @@ VideoName = ToString(aBuffer, aOffset, nVideoNameLen); aOffset += nVideoNameLen;
 struct sRofLaunchConfigTable
 {
 private:
-int32_t mRowNum;
-std::map<int32_t, sRofLaunchConfigRow> mIDMap;
-std::map<int32_t, int32_t> mRowMap;
+int mRowNum;
+std::map<int, sRofLaunchConfigRow> mIDMap;
+std::map<int, int> mRowMap;
 public:
 int GetRowNum(){ return mRowNum; }
 void Init(char aBuf[])
@@ -76,10 +76,10 @@ mRowMap[i] = nID;
 }
 sRofLaunchConfigRow* GetDataByID(int aID)
 {
-std::map<int, sRofExampleRow>::iterator pIter = mIDMap.find(aID);
+std::map<int, sRofLaunchConfigRow>::iterator pIter = mIDMap.find(aID);
 if (pIter == mIDMap.end())
 {
-return nullptr;
+return NULL;
 }
 return &pIter->second;
 }
@@ -88,7 +88,7 @@ sRofLaunchConfigRow* GetDataByRow(int aIndex)
 std::map<int, int>::iterator pIter = mRowMap.find(aIndex);
 if (pIter == mRowMap.end())
 {
-return nullptr;
+return NULL;
 }
 int nID = mRowMap[aIndex];
 return &mIDMap[nID];

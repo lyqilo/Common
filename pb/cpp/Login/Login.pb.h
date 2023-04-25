@@ -46,7 +46,7 @@ struct TableStruct_Login_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 class MsgBindPhone;
 class MsgBindPhoneDefaultTypeInternal;
 extern MsgBindPhoneDefaultTypeInternal _MsgBindPhone_default_instance_;
+class MsgModifyBankGold;
+class MsgModifyBankGoldDefaultTypeInternal;
+extern MsgModifyBankGoldDefaultTypeInternal _MsgModifyBankGold_default_instance_;
 class MsgModifyPassword;
 class MsgModifyPasswordDefaultTypeInternal;
 extern MsgModifyPasswordDefaultTypeInternal _MsgModifyPassword_default_instance_;
@@ -65,11 +68,16 @@ extern MsgPlayerLoginDefaultTypeInternal _MsgPlayerLogin_default_instance_;
 class MsgPlayerLoginResp;
 class MsgPlayerLoginRespDefaultTypeInternal;
 extern MsgPlayerLoginRespDefaultTypeInternal _MsgPlayerLoginResp_default_instance_;
+class MsgSendGold;
+class MsgSendGoldDefaultTypeInternal;
+extern MsgSendGoldDefaultTypeInternal _MsgSendGold_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::MsgBindPhone* Arena::CreateMaybeMessage<::MsgBindPhone>(Arena*);
+template<> ::MsgModifyBankGold* Arena::CreateMaybeMessage<::MsgModifyBankGold>(Arena*);
 template<> ::MsgModifyPassword* Arena::CreateMaybeMessage<::MsgModifyPassword>(Arena*);
 template<> ::MsgPlayerLogin* Arena::CreateMaybeMessage<::MsgPlayerLogin>(Arena*);
 template<> ::MsgPlayerLoginResp* Arena::CreateMaybeMessage<::MsgPlayerLoginResp>(Arena*);
+template<> ::MsgSendGold* Arena::CreateMaybeMessage<::MsgSendGold>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
 // ===================================================================
@@ -768,6 +776,300 @@ class MsgBindPhone PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Login_2eproto;
 };
+// -------------------------------------------------------------------
+
+class MsgModifyBankGold PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MsgModifyBankGold) */ {
+ public:
+  inline MsgModifyBankGold() : MsgModifyBankGold(nullptr) {}
+  virtual ~MsgModifyBankGold();
+
+  MsgModifyBankGold(const MsgModifyBankGold& from);
+  MsgModifyBankGold(MsgModifyBankGold&& from) noexcept
+    : MsgModifyBankGold() {
+    *this = ::std::move(from);
+  }
+
+  inline MsgModifyBankGold& operator=(const MsgModifyBankGold& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MsgModifyBankGold& operator=(MsgModifyBankGold&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const MsgModifyBankGold& default_instance();
+
+  static inline const MsgModifyBankGold* internal_default_instance() {
+    return reinterpret_cast<const MsgModifyBankGold*>(
+               &_MsgModifyBankGold_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(MsgModifyBankGold& a, MsgModifyBankGold& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MsgModifyBankGold* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MsgModifyBankGold* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MsgModifyBankGold* New() const final {
+    return CreateMaybeMessage<MsgModifyBankGold>(nullptr);
+  }
+
+  MsgModifyBankGold* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MsgModifyBankGold>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const MsgModifyBankGold& from);
+  void MergeFrom(const MsgModifyBankGold& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MsgModifyBankGold* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "MsgModifyBankGold";
+  }
+  protected:
+  explicit MsgModifyBankGold(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_Login_2eproto);
+    return ::descriptor_table_Login_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGoldFieldNumber = 2,
+    kTypeFieldNumber = 1,
+  };
+  // int64 gold = 2;
+  void clear_gold();
+  ::PROTOBUF_NAMESPACE_ID::int64 gold() const;
+  void set_gold(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_gold() const;
+  void _internal_set_gold(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int32 type = 1;
+  void clear_type();
+  ::PROTOBUF_NAMESPACE_ID::int32 type() const;
+  void set_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_type() const;
+  void _internal_set_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:MsgModifyBankGold)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int64 gold_;
+  ::PROTOBUF_NAMESPACE_ID::int32 type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Login_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MsgSendGold PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MsgSendGold) */ {
+ public:
+  inline MsgSendGold() : MsgSendGold(nullptr) {}
+  virtual ~MsgSendGold();
+
+  MsgSendGold(const MsgSendGold& from);
+  MsgSendGold(MsgSendGold&& from) noexcept
+    : MsgSendGold() {
+    *this = ::std::move(from);
+  }
+
+  inline MsgSendGold& operator=(const MsgSendGold& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MsgSendGold& operator=(MsgSendGold&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const MsgSendGold& default_instance();
+
+  static inline const MsgSendGold* internal_default_instance() {
+    return reinterpret_cast<const MsgSendGold*>(
+               &_MsgSendGold_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(MsgSendGold& a, MsgSendGold& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MsgSendGold* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MsgSendGold* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MsgSendGold* New() const final {
+    return CreateMaybeMessage<MsgSendGold>(nullptr);
+  }
+
+  MsgSendGold* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MsgSendGold>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const MsgSendGold& from);
+  void MergeFrom(const MsgSendGold& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MsgSendGold* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "MsgSendGold";
+  }
+  protected:
+  explicit MsgSendGold(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_Login_2eproto);
+    return ::descriptor_table_Login_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGoldFieldNumber = 2,
+    kBeautifulIdFieldNumber = 1,
+  };
+  // int64 gold = 2;
+  void clear_gold();
+  ::PROTOBUF_NAMESPACE_ID::int64 gold() const;
+  void set_gold(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_gold() const;
+  void _internal_set_gold(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int32 beautiful_id = 1;
+  void clear_beautiful_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 beautiful_id() const;
+  void set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_beautiful_id() const;
+  void _internal_set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:MsgSendGold)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int64 gold_;
+  ::PROTOBUF_NAMESPACE_ID::int32 beautiful_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Login_2eproto;
+};
 // ===================================================================
 
 
@@ -1317,9 +1619,101 @@ inline void MsgBindPhone::set_allocated_phone_num(std::string* phone_num) {
   // @@protoc_insertion_point(field_set_allocated:MsgBindPhone.phone_num)
 }
 
+// -------------------------------------------------------------------
+
+// MsgModifyBankGold
+
+// int32 type = 1;
+inline void MsgModifyBankGold::clear_type() {
+  type_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgModifyBankGold::_internal_type() const {
+  return type_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgModifyBankGold::type() const {
+  // @@protoc_insertion_point(field_get:MsgModifyBankGold.type)
+  return _internal_type();
+}
+inline void MsgModifyBankGold::_internal_set_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  type_ = value;
+}
+inline void MsgModifyBankGold::set_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:MsgModifyBankGold.type)
+}
+
+// int64 gold = 2;
+inline void MsgModifyBankGold::clear_gold() {
+  gold_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 MsgModifyBankGold::_internal_gold() const {
+  return gold_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 MsgModifyBankGold::gold() const {
+  // @@protoc_insertion_point(field_get:MsgModifyBankGold.gold)
+  return _internal_gold();
+}
+inline void MsgModifyBankGold::_internal_set_gold(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  gold_ = value;
+}
+inline void MsgModifyBankGold::set_gold(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_gold(value);
+  // @@protoc_insertion_point(field_set:MsgModifyBankGold.gold)
+}
+
+// -------------------------------------------------------------------
+
+// MsgSendGold
+
+// int32 beautiful_id = 1;
+inline void MsgSendGold::clear_beautiful_id() {
+  beautiful_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgSendGold::_internal_beautiful_id() const {
+  return beautiful_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MsgSendGold::beautiful_id() const {
+  // @@protoc_insertion_point(field_get:MsgSendGold.beautiful_id)
+  return _internal_beautiful_id();
+}
+inline void MsgSendGold::_internal_set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  beautiful_id_ = value;
+}
+inline void MsgSendGold::set_beautiful_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_beautiful_id(value);
+  // @@protoc_insertion_point(field_set:MsgSendGold.beautiful_id)
+}
+
+// int64 gold = 2;
+inline void MsgSendGold::clear_gold() {
+  gold_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 MsgSendGold::_internal_gold() const {
+  return gold_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 MsgSendGold::gold() const {
+  // @@protoc_insertion_point(field_get:MsgSendGold.gold)
+  return _internal_gold();
+}
+inline void MsgSendGold::_internal_set_gold(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  gold_ = value;
+}
+inline void MsgSendGold::set_gold(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_gold(value);
+  // @@protoc_insertion_point(field_set:MsgSendGold.gold)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

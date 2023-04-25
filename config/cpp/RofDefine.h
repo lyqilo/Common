@@ -6,12 +6,12 @@ struct NNKV
 {
 int k;
 double v;
-int32_t GetKey() { return k; }
+int GetKey() { return k; }
 double GetValue() { return v; }
 };
 static bool IsLittleEndian()
 {
-int32_t nValue = 1;
+int nValue = 1;
 char*p = (char*)&nValue;
 if (*p == 1) return true;
 else return false;
@@ -26,16 +26,16 @@ aData[aOffset + i] = tmp;
 aData[aOffset + aLen - i - 1] = c;
 }
 }
-static int32_t ToInt32(char aData[], int aOffset)
+static int ToInt32(char aData[], int aOffset)
 {
-int32_t nValue;
-memcpy(&nValue, (int32_t*)(aData + aOffset), 4);
+int nValue;
+memcpy(&nValue, (int*)(aData + aOffset), 4);
 return nValue;
 }
-static int64_t ToInt64(char aData[], int aOffset)
+static long long ToInt64(char aData[], int aOffset)
 {
-int64_t nValue;
-memcpy(&nValue, (int64_t*)(aData + aOffset), 8);
+long long nValue;
+memcpy(&nValue, (long long*)(aData + aOffset), 8);
 return nValue;
 }
 static float ToSingle(char aData[], int aOffset)

@@ -30,3 +30,15 @@ message MsgBindPhone
 	int32		code			= 1;	//验证码
 	string		phone_num		= 2;	//手机号码
 }
+
+message MsgModifyBankGold
+{
+	int32 type					= 1;		//操作银行(0:存 1:取)
+	int64 gold					= 2;		//操作金币数量
+}
+
+message MsgSendGold
+{
+	int32 beautiful_id			= 1;		//靓号
+	int64 gold					= 2;		//赠送金币
+}

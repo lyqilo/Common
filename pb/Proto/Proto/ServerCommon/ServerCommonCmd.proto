@@ -3,28 +3,65 @@ syntax = "proto3";
 enum EMsgIDServerMain
 {
 	MsgIDServerMain_Null						= 0;
-	LOGIN_TO_CENTER_SERVER_MANAGER				= 1;
+	LOGIN2CENTER_MANAGER						= 1;
+	GAME2CENTER_MANAGER							= 2;
+	CENTER2LOGIN_NOTIFY							= 3;
+	CENTER2GAME_NOTIFY							= 4;
+	ROBOT2GAME_MAIN								= 5;
 }
 
 enum EMsgIDServerInternalProto
 {
+	//0-1000 login2center
 	SERVER_INTERNAL_NULL			= 0;
-	LOGIN2CENTER_REGISTER			= 1;	//登录服务器注册
-	LOGIN2CENTER_UPDATE_ONLINE_NUM	= 2;	//更新在线人数
+	LOGIN2CENTER_Register			= 1;	//登录服务器注册
+	LOGIN2CENTER_UpdateOnlineNum	= 2;	//更新在线人数
+	LOGIN2CENTER_SendGold			= 3;	//赠送金币
+	CENTER2LOGIN_SendGoldResp		= 4;	//赠送金币返回
+	//1001-2000 game2center
+	GAME2CENTER_Register			= 2001;	//游戏服务器注册
+	GAME2CENTER_ApplyRobot			= 2002;	//申请机器人
+	CENTER2GAME_ApplyRobotResp		= 2003;	//申请机器人返回
+	//2001-3000
+	ROBOT2GAME_RobotLogin			= 3001;	//机器人登录
 }
 
 enum EMsgIDDB
 {
 	//0-1000 Center_Server2DB
-	MsgIDDB_NULL							= 0;
-	CENTER_SERVER2DB_UPDATE_ONLINE_NUM		= 1;	//更新在线人数
-	CENTER_SERVER2DB_INIT_ONLINE_NUM		= 2;	//初始化在线人数
-	CENTER_SERVER2DB_REGISTER_LOGIN			= 3;	//登录服务器注册
-	CENTER_SERVER2DB_UNREGISTER_LOGIN		= 4;	//登录服务器关闭
+	MsgIDDB_NULL					= 0;
+	CENTER2DB_UpdateOnlineNum		= 1;	//更新在线人数
+	CENTER2DB_InitOnlineNum			= 2;	//初始化在线人数
+	CENTER2DB_RegisterLogin			= 3;	//登录服务器注册
+	CENTER2DB_UnregisterLogin		= 4;	//登录服务器关闭
+	CENTER2DB_RegisterGame			= 5;	//游戏服务器注册
+	CENTER2DB_LoadAllRobot			= 6;	//加载所有机器人
+	DB2CENTER_LoadAllRobotResp		= 7;	//加载所有机器人返回
+	CENTER2DB_CreateRobot			= 8;	//创建机器人
+	DB2CENTER_CreateRobotResp		= 9;	//创建机器人返回
+	
 	//1001-2000 LoginServer2DB
-	LOGIN_SERVER2DB_LOGIN					= 1001;	//玩家登录
-	DB2LOGIN_SERVER_LOGIN					= 1002;	//玩家登录返回
-	DB2LOGIN_LOAD_PLAYER_DATA				= 1003;	//加载玩家数据
-	LOGIN_SERVER2DB_LOGIN_OUT				= 1004;	//玩家登出
-	LOGIN_SERVER2DB_UPDATE_PLAYER_INFO		= 1005;	//更新玩家基础信息
+	LOGIN2DB_Login					= 1001;	//玩家登录
+	DB2LOGIN_LoginResp				= 1002;	//玩家登录返回
+	DB2LOGIN_LoadPlayerData			= 1003;	//加载玩家数据
+	LOGIN2DB_LoginOut				= 1004;	//玩家登出
+	LOGIN2DB_UpdatePlayerInfo		= 1005;	//更新玩家基础信息
+	LOGIN2DB_ReadMail				= 1006;	//读取邮件
+	LOGIN2DB_PickMail				= 1007;	//领取邮件
+	DB2LOGIN_PickMailResp			= 1008;	//领取邮件返回
+	LOGIN2DB_RecallMail				= 1009;	//撤回邮件
+	DB2LOGIN_RecallMailResp			= 1010;	//撤回邮件返回
+	LOGIN2DB_DeleteAllReadMail		= 1011;	//删除已读邮件
+	DB2LOGIN_DeleteAllReadMailResp	= 1012;	//删除已读邮件返回
+	LOGIN2DB_BankModifyGold			= 1013;	//银行操作金币(0:存金币 1:取金币)
+	DB2LOGIN_BankModifyGoldResp		= 1014;	//操作银行金币返回
+	LOGIN2DB_SendGold				= 1015;	//赠送金币
+	DB2LOGIN_SendGoldResp			= 1016;	//赠送金币返回
+	
+	//2001-3000 GameServer2DB
+	GAME2DB_Login					= 2001;	//玩家登录游戏
+	DB2GAME_LoginResp				= 2002;	//玩家登录游戏返回
+	DB2GAME_LoadPlayerData			= 2003;	//加载游戏服务器玩家数据
+	GAME2DB_RobotLoginByUserID		= 2004;	//机器人登录
+	DB2GAME_RobotLoginByUserIDResp	= 2005;	//机器人登录返回
 }
