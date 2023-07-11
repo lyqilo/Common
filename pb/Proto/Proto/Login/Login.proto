@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+
+message MsgPlayerLogin
+{
+	string		account			= 1;	//玩家账号
+}
+
+message MsgPlayerLoginResp
+{
+	int32		res_code		= 1;	//登录返回码(0:成功 非0:失败)
+	int32		user_id			= 2;	//玩家ID
+	int32		beautiful_id	= 3;	//玩家靓号
+	string		nickname		= 4;	//玩家昵称
+	int32		user_type		= 5;	//玩家类型
+	uint64		coin			= 6;	//玩家金币
+	uint64		bank_coin		= 7;	//银行金币
+	int32		head_id			= 8;	//头像id
+	string		phone_num		= 9;	//手机号
+}
+
+message MsgModifyPassword
+{
+	string		old_password	= 1;	//旧密码
+	string		new_password	= 2;	//新密码
+}
+
+message MsgBindPhone
+{
+	int32		code			= 1;	//验证码
+	string		phone_num		= 2;	//手机号码
+}
+
+message MsgModifyBankGold
+{
+	int32 type					= 1;		//操作银行(0:存 1:取)
+	int64 gold					= 2;		//操作金币数量
+}
+
+message MsgSendGold
+{
+	int32 beautiful_id			= 1;		//靓号
+	int64 gold					= 2;		//赠送金币
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message MsgGamePlayerLogin
+{
+	string		account			= 1;	//玩家账号
+}
+
+message MsgGamePlayerLoginResp
+{
+	int32		res_code		= 1;	//登录返回码(0:成功 非0:失败)
+}

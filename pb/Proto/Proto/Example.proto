@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Example
+{
+	//required:表示必须有的字段
+	//repeated:数组
+	required	double		value1			= 1;
+	required	float		value2			= 2;
+	required	int32		value3			= 3;
+	required	uint32		value4			= 4;
+	required	int64		value5			= 5;
+	required	uint64		value6			= 6;
+	required	bool		value7			= 7;
+	required	string		value8			= 8;
+	repeated	int32		value9			= 9;
+}
